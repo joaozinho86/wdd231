@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de estudante - Certificação Web">
+  <meta name="author" content="João Correa">
+  <title>Câmara de Comércio de Santana do Livramento</title>
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/telas-pequenas.css">
+  <link rel="stylesheet" href="estilos/maior.css">
+  <script src="scripts/navegacao.js" defer></script>
+  <script src="scripts/data.js" defer></script>
+  <script src="scripts/curso.js" defer></script>
 </head>
 <body>
-    
+  <header>
+    <img src="imagens/logo.svg" alt="Logotipo do site">
+    <span>Câmara de Comércio de Santana do Livramento - RS</span>
+    <button id="menuBtn">☰</button>
+    <nav id="menuNav">
+      <a href="index.html">Página Inicial</a>
+      <a href="projeto-camara.html">Projeto da Câmara</a>
+      <a href="projeto-final.html">Projeto Final</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Página Inicial</h1>
+
+    <section>
+      <h2>Sobre Mim</h2>
+      <p>Meu nome é João Alberto Gonçalves Correa e sou Agile Master em uma multinacional, morador de Santana do Livramento (RS), apaixonado por futebol e dedicado membro de A Igreja de Jesus Cristo dos Santos dos Últimos Dias.</p>
+    </section>
+
+    <section>
+      <h2>Foto</h2>
+      <img src="imagens/foto.jpg" alt="Foto do Estudante">
+    </section>
+
+    <section>
+      <h2>Cursos de Certificação Web</h2>
+      <div class="filtros">
+        <button id="btnTodos">Todos</button>
+        <button id="btnCSE">CSE</button>
+        <button id="btnWDD">WDD</button>
+      </div>
+      <div id="listaCursos"></div>
+      <p>Total de créditos: <span id="totalCreditos"></span></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/seuusuario" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/seuusuario" target="_blank">LinkedIn</a>
+    </div>
+    <p>© <span id="anoAtual"></span> - João Correa - Brasil</p>
+    <p id="ultimaModificacao"></p>
+  </footer>
 </body>
 </html>
