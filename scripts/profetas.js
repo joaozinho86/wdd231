@@ -13,14 +13,12 @@ const exibirProfetas = (profetas) => {
     let nomeCompleto = document.createElement('h2');
     let retrato = document.createElement('img');
 
-    // elementos extras
     let nascimento = document.createElement('p');
     let lugar = document.createElement('p');
     let criancas = document.createElement('p');
     let anosServico = document.createElement('p');
     let falecimento = document.createElement('p');
 
-    // preenchendo conteúdo
     nomeCompleto.textContent = `${profeta.nome} ${profeta.sobrenome}`;
     retrato.setAttribute('src', profeta.urlImagem || 'placeholder.jpg');
     retrato.setAttribute('alt', `Retrato de ${profeta.nome} ${profeta.sobrenome}`);
@@ -29,12 +27,11 @@ const exibirProfetas = (profetas) => {
     retrato.setAttribute('height', '440');
 
     nascimento.textContent = `Nascimento: ${profeta.nascimento}`;
-    lugar.textContent = `Lugar: ${profeta.lugar}`;
-    criancas.textContent = `Crianças: ${profeta.criancas}`;
-    anosServico.textContent = `Anos de Serviço: ${profeta.anosDeServico}`;
-    falecimento.textContent = `Falecimento: ${profeta.falecimento}`;
+    lugar.textContent = `Lugar: ${profeta.localNascimento}`;
+    criancas.textContent = `Crianças: ${profeta.numeroFilhos}`;
+    anosServico.textContent = `Anos de Serviço: ${profeta.duracao}`;
+    falecimento.textContent = `Falecimento: ${profeta.morte}`;
 
-    // montando cartão
     cartao.appendChild(nomeCompleto);
     cartao.appendChild(retrato);
     cartao.appendChild(nascimento);
