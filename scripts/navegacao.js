@@ -1,6 +1,8 @@
-const menuBtn = document.getElementById("menuBtn");
-const menuNav = document.getElementById("menuNav");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const menuNav = document.getElementById("menuNav");
 
-menuBtn.addEventListener("click", () => {
-  menuNav.style.display = menuNav.style.display === "flex" ? "none" : "flex";
+  menuBtn.addEventListener("click", () => {
+    menuNav.classList.toggle("ativo");
+  });
 });

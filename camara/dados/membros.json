@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Livramento Comércio Ltda",
+    "address": "Rua dos Andradas, 1200 - Santana do Livramento",
+    "phone": "(55) 3242-1000",
+    "website": "https://livramentocomercio.com",
+    "image": "livramento.png",
+    "membership": "Ouro"
+  },
+  {
+    "name": "Fronteira Café",
+    "address": "Av. João Pessoa, 450 - Santana do Livramento",
+    "phone": "(55) 3242-2000",
+    "website": "https://fronteiracafe.com",
+    "image": "cafe.png",
+    "membership": "Prata"
+  },
+  {
+    "name": "Hotel Internacional",
+    "address": "Rua Uruguai, 789 - Santana do Livramento",
+    "phone": "(55) 3242-3000",
+    "website": "https://hotelinternacional.com",
+    "image": "hotel.png",
+    "membership": "Ouro"
+  },
+  {
+    "name": "Mercado Fronteira",
+    "address": "Rua Manduca Rodrigues, 210 - Santana do Livramento",
+    "phone": "(55) 3242-4000",
+    "website": "https://mercadofronteira.com",
+    "image": "mercado.png",
+    "membership": "Membro"
+  },
+  {
+    "name": "Livramento Tech",
+    "address": "Av. Daltro Filho, 999 - Santana do Livramento",
+    "phone": "(55) 3242-5000",
+    "website": "https://livramentotech.com",
+    "image": "tech.png",
+    "membership": "Prata"
+  },
+  {
+    "name": "Restaurante Gaúcho",
+    "address": "Rua General Neto, 321 - Santana do Livramento",
+    "phone": "(55) 3242-6000",
+    "website": "https://restaurantegaucho.com",
+    "image": "gaucho.png",
+    "membership": "Ouro"
+  },
+  {
+    "name": "Clínica Saúde Fronteira",
+    "address": "Rua Duque de Caxias, 45 - Santana do Livramento",
+    "phone": "(55) 3242-7000",
+    "website": "https://saudefronteira.com",
+    "image": "clinica.png",
+    "membership": "Membro"
+  }
+]

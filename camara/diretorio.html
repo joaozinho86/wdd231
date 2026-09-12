@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Câmara de Comércio de Santana do Livramento</title>
+  <meta name="description" content="Site oficial da Câmara de Comércio de Santana do Livramento. Diretório de empresas, eventos e informações locais.">
+  <meta name="author" content="João - WDD 231">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+  <header>
+    <h1>Câmara de Comércio de Santana do Livramento</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="diretorio.html">Diretório</a></li>
+        <li><a href="associar.html">Associar-se</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h2>Bem-vindo à Câmara de Comércio</h2>
+      <p>Fortalecendo empresas e comunidade em Santana do Livramento</p>
+      <button>Ingressar na Câmara</button>
+    </section>
+
+    <!-- Destaques -->
+    <section class="destaques">
+      <div class="coluna">
+        <h3>Eventos</h3>
+        <ul id="eventos">
+          <!-- Carregado via JS -->
+        </ul>
+      </div>
+      <div class="coluna">
+        <h3>Clima Atual</h3>
+        <div id="clima">
+          <!-- Carregado via API -->
+        </div>
+      </div>
+      <div class="coluna">
+        <h3>Previsão</h3>
+        <div id="previsao">
+          <!-- Carregado via API -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Empresas em destaque -->
+    <section class="empresas">
+      <h2>Empresas Associadas</h2>
+      <div id="empresas">
+        <!-- Carregado via JSON -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Câmara de Comércio de Santana do Livramento</p>
+    <p>Projeto de Aula WDD231 – João</p>
+    <p>Última modificação: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

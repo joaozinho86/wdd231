@@ -12,8 +12,16 @@ function renderCursos(lista) {
 
   lista.forEach(curso => {
     const card = document.createElement("div");
-    card.className = curso.completed ? "curso concluido" : "curso";
-    card.textContent = `${curso.codigo} - ${curso.nome} (${curso.creditos} créditos)`;
+    card.className = curso.completed ? "curso-card concluido" : "curso-card";
+
+    // Estrutura interna do cartão
+    card.innerHTML = `
+      <h3>${curso.codigo}</h3>
+      <p>${curso.nome}</p>
+      <p><strong>Créditos:</strong> ${curso.creditos}</p>
+      <p>Status: ${curso.completed ? "Concluído ✅" : "Em andamento ⏳"}</p>
+    `;
+
     container.appendChild(card);
     total += curso.creditos;
   });

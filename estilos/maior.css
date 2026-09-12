@@ -3,20 +3,60 @@
     display: none;
   }
 
+  /* Header alinhado em linha única */
+  header {
+    display: flex;
+    align-items: center;   /* centraliza verticalmente logo, título e menu */
+    justify-content: space-between;
+    padding: 0.5rem 1rem;  /* menos espaço */
+    background-color: #004080;
+    color: #fff;
+  }
+
+  header img {
+    height: 40px; /* menor para alinhar melhor */
+    margin-right: 1rem;
+  }
+
   #menuNav {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    background-color: transparent;
   }
 
+  #menuNav a {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  #menuNav a.ativo {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+  }
+
+  /* Main mais compacto */
   main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;             /* reduzido para evitar espaços excessivos */
+    max-width: 1000px;     /* menor largura máxima */
+    margin: 1rem auto;     /* menos margem superior/inferior */
+    padding: 0 1rem;
   }
 
   section {
-    border: 1px solid #ccc;
+    border: 1px solid #99ccff;
     padding: 1rem;
+    border-radius: 6px;
+    background-color: #f9fcff;
+  }
+
+  footer {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
   }
 }
