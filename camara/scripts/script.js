@@ -1,6 +1,8 @@
+// Exibir ano e última modificação
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
+// Alternar entre grade e lista
 const membersSection = document.getElementById("members");
 document.getElementById("gridBtn").addEventListener("click", () => {
   membersSection.classList.add("grid-view");
@@ -11,6 +13,7 @@ document.getElementById("listBtn").addEventListener("click", () => {
   membersSection.classList.remove("grid-view");
 });
 
+// Carregar dados dos membros
 async function loadMembers() {
   const response = await fetch("dados/membros.json");
   const data = await response.json();
