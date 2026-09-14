@@ -1,0 +1,104 @@
+/* estilos/modulos.css */
+
+/* Reset simples */
+body, h1, h2, p, select, button, table {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout principal */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Área de matrícula */
+#matricula {
+  margin-bottom: 20px;
+}
+
+#matricula p {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+select {
+  padding: 6px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botões */
+button {
+  padding: 8px 14px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button#removerEstudante {
+  background-color: #e74c3c;
+}
+
+button#removerEstudante:hover {
+  background-color: #c0392b;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #3498db;
+  color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #eaf2f8;
+}
