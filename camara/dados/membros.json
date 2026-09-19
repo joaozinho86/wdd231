@@ -35,7 +35,7 @@
     "name": "El Gato Bar e Restaurante",
     "address": "Av. Tamandaré, 2404 - Santana do Livramento",
     "phone": "(55) 3242-2000",
-    "website":
+    "website": "https://www.elgato.com.br/",
     "image": "imagens/elgato.png",
     "membership": "Prata"
   },
@@ -52,7 +52,7 @@
     "address": "R. Pref. Hugolino Andrade, 1030 - Santana do Livramento",
     "phone": "(55) 99947-9066",
     "website": "https://climvet.com.br/",
-    "image": "imagens/clinvet.png",
+    "image": "imagens/clinvet.webp",
     "membership": "Membro"
   }
 ]

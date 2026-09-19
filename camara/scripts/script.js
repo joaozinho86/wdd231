@@ -22,15 +22,23 @@ async function loadMembers() {
     const card = document.createElement("div");
     card.classList.add("member-card");
     card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name}">
-      <h3>${member.name}</h3>
-      <p>${member.address}</p>
-      <p>Telefone: ${member.phone}</p>
-      <a href="${member.website}" target="_blank">Visite o site</a>
-      <p>Nível de associação: ${member.membership}</p>
+       <img src="${member.image}" alt="${member.name}">
+       <h3>${member.name}</h3>
+       <p>${member.address}</p>
+       <p>Telefone: ${member.phone}</p>
+       <a href="${member.website}" target="_blank">Visite o site</a>
+       <p>Nível de associação: ${member.membership}</p>
     `;
+
     membersSection.appendChild(card);
   });
 }
-
 loadMembers();
+
+// Alternar menu hambúrguer
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
