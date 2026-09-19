@@ -139,3 +139,109 @@ footer {
   text-align: center;
   padding: 1rem;
 }
+
+/* Empresas em destaque lado a lado */
+#empresas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Rodapé em colunas com ícones sociais */
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Seção Início em 3 colunas */
+/* Seção Início responsiva */
+.inicio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.info-box {
+  background: var(--secondary);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* No celular, empilha as colunas */
+@media (max-width: 768px) {
+  .inicio {
+    grid-template-columns: 1fr; /* apenas uma coluna */
+  }
+}
+
+/* Hero responsivo com imagem de fundo */
+.hero {
+  /* Caminho da imagem: ajuste conforme a pasta */
+  background: url("../imagens/Livramento.png") center/cover no-repeat;
+  min-height: 400px; /* garante altura visível */
+  display: flex;
+  justify-content: flex-end; /* joga conteúdo para a direita */
+  align-items: center;       /* centraliza verticalmente */
+  padding: 2rem;
+  color: #fff;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.5); /* overlay para contraste */
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.hero button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background: #e68900;
+}
+
+/* Estilo para a coluna Clima e Previsão */
+#clima p, #previsao p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espaço entre ícone e texto */
+  margin: 0.25rem 0;
+}
+
+#clima img, #previsao img {
+  width: 32px;
+  height: 32px;
+}

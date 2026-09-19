@@ -16,25 +16,36 @@ eventos.forEach(ev => {
 
 // Clima via OpenWeatherMap
 async function loadWeather() {
-  const apiKey = "SUA_CHAVE_API";
+  const apiKey = "d5e390d6bebb724e6655125d6e620a88";
   const city = "Santana do Livramento";
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=pt_br&appid=${apiKey}`;
   const response = await fetch(url);
   const data = await response.json();
 
   const climaDiv = document.getElementById("clima");
+  const iconAtual = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
+
   climaDiv.innerHTML = `
-    <p>${data.list[0].main.temp}°C - ${data.list[0].weather[0].description}</p>
+    <p><img src="${iconAtual}" alt="${data.list[0].weather[0].description}">
+    ${Math.round(data.list[0].main.temp)}°C - ${data.list[0].weather[0].description}</p>
   `;
 
   const previsaoDiv = document.getElementById("previsao");
+  previsaoDiv.innerHTML = "";
+
   for (let i = 1; i <= 3; i++) {
-    const dia = data.list[i*8]; // previsão diária
+    const dia = data.list[i * 8]; // previsão diária
     const date = new Date(dia.dt_txt).toLocaleDateString("pt-BR", { weekday: "long" });
-    previsaoDiv.innerHTML += `<p>${date}: ${dia.main.temp}°C</p>`;
+    const icon = `https://openweathermap.org/img/wn/${dia.weather[0].icon}.png`;
+
+    previsaoDiv.innerHTML += `
+      <p><img src="${icon}" alt="${dia.weather[0].description}">
+      ${date}: ${Math.round(dia.main.temp)}°C - ${dia.weather[0].description}</p>
+    `;
   }
 }
 loadWeather();
+
 
 // Empresas em destaque
 async function loadEmpresas() {
@@ -49,7 +60,7 @@ async function loadEmpresas() {
     const card = document.createElement("div");
     card.classList.add("member-card");
     card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name}">
+      <img src="${member.image}" alt="${member.name}">
       <h3>${member.name}</h3>
       <p>${member.address}</p>
       <p>Telefone: ${member.phone}</p>
@@ -60,3 +71,11 @@ async function loadEmpresas() {
   });
 }
 loadEmpresas();
+
+// Menu hambúrguer
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
