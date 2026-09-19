@@ -1,58 +1,58 @@
 [
   {
-    "name": "Livramento Comércio Ltda",
-    "address": "Rua dos Andradas, 1200 - Santana do Livramento",
-    "phone": "(55) 3242-1000",
-    "website": "https://livramentocomercio.com",
-    "image": "livramento.png",
+    "name": "Coisa Nossa Churrascaria",
+    "address": "Av. Tamandaré, 1758 - Santana do Livramento",
+    "phone": "(55) 3621-3435",
+    "website": "https://www.churrascariacoisanossa.com.br/",
+    "image": "coisanossa.png",
     "membership": "Ouro"
   },
   {
-    "name": "Fronteira Café",
-    "address": "Av. João Pessoa, 450 - Santana do Livramento",
-    "phone": "(55) 3242-2000",
-    "website": "https://fronteiracafe.com",
-    "image": "cafe.png",
+    "name": "Supermercados Nicolini",
+    "address": "Av. Tamandaré, 1569 - Santana do Livramento",
+    "phone": "(55) 3965-0052",
+    "website": "https://www.supernicolini.com.br/",
+    "image": "Nicolini.png",
     "membership": "Prata"
   },
   {
-    "name": "Hotel Internacional",
-    "address": "Rua Uruguai, 789 - Santana do Livramento",
-    "phone": "(55) 3242-3000",
-    "website": "https://hotelinternacional.com",
-    "image": "hotel.png",
+    "name": "Sesc Santana do Livramento",
+    "address": "R. Brg. David Canabarro, 650 - Santana do Livramento",
+    "phone": "(55) 3642-0930",
+    "website": "https://www.sesc-rs.com.br/santana_do_livramento/",
+    "image": "Sesclivramento.png",
     "membership": "Ouro"
   },
   {
-    "name": "Mercado Fronteira",
-    "address": "Rua Manduca Rodrigues, 210 - Santana do Livramento",
-    "phone": "(55) 3242-4000",
-    "website": "https://mercadofronteira.com",
-    "image": "mercado.png",
+    "name": "Verde Plaza Hotel",
+    "address": "R. Manduca Rodrigues, 747 - Santana do Livramento",
+    "phone": "(55) 3242-9300",
+    "website": "https://www.verdeplaza.com.br/hotelemlivramento/",
+    "image": "verdeplaza.png",
     "membership": "Membro"
   },
   {
-    "name": "Livramento Tech",
-    "address": "Av. Daltro Filho, 999 - Santana do Livramento",
-    "phone": "(55) 3242-5000",
-    "website": "https://livramentotech.com",
-    "image": "tech.png",
+    "name": "El Gato Bar e Restaurante",
+    "address": "Av. Tamandaré, 2404 - Santana do Livramento",
+    "phone": "(55) 3242-2000",
+    "website":
+    "image": "elgato.png",
     "membership": "Prata"
   },
   {
-    "name": "Restaurante Gaúcho",
-    "address": "Rua General Neto, 321 - Santana do Livramento",
-    "phone": "(55) 3242-6000",
-    "website": "https://restaurantegaucho.com",
-    "image": "gaucho.png",
+    "name": "O Boticario",
+    "address": "R. dos Andradas, 484 - Santana do Livramento",
+    "phone": "(55) 3621-3647",
+    "website": "https://www.boticario.com.br/?utm_source=google&utm_medium=maps&utm_campaign=Fbiz_13382",
+    "image": "oboticario.png",
     "membership": "Ouro"
   },
   {
-    "name": "Clínica Saúde Fronteira",
-    "address": "Rua Duque de Caxias, 45 - Santana do Livramento",
-    "phone": "(55) 3242-7000",
-    "website": "https://saudefronteira.com",
-    "image": "clinica.png",
+    "name": "Climvet - Clínica médica Veterinária",
+    "address": "R. Pref. Hugolino Andrade, 1030 - Santana do Livramento",
+    "phone": "(55) 99947-9066",
+    "website": "https://climvet.com.br/",
+    "image": "clinvet.png",
     "membership": "Membro"
   }
 ]
