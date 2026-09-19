@@ -1,8 +1,6 @@
-// Exibir ano e última modificação
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// Eventos fictícios
 const eventos = [
   { titulo: "Workshop de Marketing", data: "20/09/2026" },
   { titulo: "Feira de Negócios", data: "25/09/2026" }
@@ -14,7 +12,6 @@ eventos.forEach(ev => {
   eventosLista.appendChild(li);
 });
 
-// Clima via OpenWeatherMap
 async function loadWeather() {
   const apiKey = "d5e390d6bebb724e6655125d6e620a88";
   const city = "Santana do Livramento";
@@ -34,7 +31,7 @@ async function loadWeather() {
   previsaoDiv.innerHTML = "";
 
   for (let i = 1; i <= 3; i++) {
-    const dia = data.list[i * 8]; // previsão diária
+    const dia = data.list[i * 8];
     const date = new Date(dia.dt_txt).toLocaleDateString("pt-BR", { weekday: "long" });
     const icon = `https://openweathermap.org/img/wn/${dia.weather[0].icon}.png`;
 
@@ -47,7 +44,6 @@ async function loadWeather() {
 loadWeather();
 
 
-// Empresas em destaque
 async function loadEmpresas() {
   const response = await fetch("dados/membros.json");
   const data = await response.json();
@@ -72,7 +68,6 @@ async function loadEmpresas() {
 }
 loadEmpresas();
 
-// Menu hambúrguer
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
