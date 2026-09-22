@@ -1,4 +1,5 @@
 @media (min-width: 768px) {
+  /* Botão do menu some em telas grandes */
   #menuBtn {
     display: none;
   }
@@ -6,18 +7,19 @@
   /* Header alinhado em linha única */
   header {
     display: flex;
-    align-items: center;   /* centraliza verticalmente logo, título e menu */
+    align-items: center;      /* centraliza logo, título e menu */
     justify-content: space-between;
-    padding: 0.5rem 1rem;  /* menos espaço */
+    padding: 0.75rem 2rem;    /* espaçamento mais equilibrado */
     background-color: #004080;
     color: #fff;
   }
 
   header img {
-    height: 40px; /* menor para alinhar melhor */
+    height: 40px;             /* tamanho ideal para alinhamento */
     margin-right: 1rem;
   }
 
+  /* Menu horizontal */
   #menuNav {
     display: flex;
     flex-direction: row;
@@ -33,25 +35,36 @@
   #menuNav a.ativo {
     color: #ffcc00;
     border-bottom: 2px solid #ffcc00;
+    text-shadow: 0 0 4px rgba(255, 204, 0, 0.6);
   }
 
-  /* Main mais compacto */
+  /* Layout principal em duas colunas */
   main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;             /* reduzido para evitar espaços excessivos */
-    max-width: 1000px;     /* menor largura máxima */
-    margin: 1rem auto;     /* menos margem superior/inferior */
+    gap: 1rem;
+    max-width: 1200px;        /* mais confortável em telas grandes */
+    margin: 1rem auto;
     padding: 0 1rem;
   }
 
+  /* Seções mais equilibradas */
   section {
     border: 1px solid #99ccff;
     padding: 1rem;
     border-radius: 6px;
     background-color: #f9fcff;
+    min-height: 200px;        /* evita colunas desbalanceadas */
   }
 
+  /* Imagens responsivas */
+  section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Rodapé */
   footer {
     margin-top: 1rem;
     padding: 0.5rem;
@@ -59,4 +72,30 @@
     color: #fff;
     text-align: center;
   }
+}
+
+/* Modal (dialog) — funciona em todas as telas */
+dialog {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: .25rem;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 3rem #777;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+dialog button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: .5rem 1rem;
+  border: 1px solid rgb(0 0 0 / 10%);
+  background: #eee;
+  cursor: pointer;
 }
