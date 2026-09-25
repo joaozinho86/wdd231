@@ -49,9 +49,19 @@
   <main>
     <h2>Diretório de Membros</h2>
     <div class="view-options">
-      <button id="gridBtn">Grade</button>
-      <button id="listBtn">Lista</button>
+      <button id="gridBtn" class="toggle-btn active" aria-label="Grade">
+    <span class="icon-grid">
+      <div></div><div></div>
+      <div></div><div></div>
+      <div></div><div></div>
+    </span>
+      </button>
+      <button id="listBtn" class="toggle-btn" aria-label="Lista">
+    <span class="icon">☰</span>
+      </button>
     </div>
+
+
     <section id="members" class="grid-view"></section>
   </main>
 

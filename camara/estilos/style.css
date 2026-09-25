@@ -11,6 +11,7 @@ body {
   color: var(--text);
 }
 
+/* Cabeçalho */
 .site-header {
   background: var(--primary);
   color: #fff;
@@ -56,9 +57,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+  .hamburger { display: block; }
 
   #navMenu {
     display: none;
@@ -67,9 +66,7 @@ body {
     padding: 1rem;
   }
 
-  #navMenu.show {
-    display: flex;
-  }
+  #navMenu.show { display: flex; }
 
   .menu {
     flex-direction: column;
@@ -78,6 +75,7 @@ body {
   }
 }
 
+/* Diretório */
 #members.grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -85,12 +83,96 @@ body {
   margin: 1rem;
 }
 
-#members.list-view .member-card {
+#members.list-view {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
+#members.list-view .member-card {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 2fr; /* Nome, endereço, telefone, site */
+  align-items: center;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background: var(--secondary);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+#members.list-view .member-card img { display: none; }
+
+#members.list-view .member-card h3 {
+  margin: 0;
+  color: var(--primary);
+}
+
+#members.list-view .member-card p,
+#members.list-view .member-card a { margin: 0; }
+
+/* Container dos botões */
+.view-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: center;
+  gap: 1rem;                 /* espaço entre os botões */
+  margin: 1rem 0;
+}
+
+/* Botões */
+.toggle-btn {
+  background: var(--primary);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn:hover { background: var(--accent); }
+.toggle-btn.active { background: var(--accent); }
+
+/* Ícone Grade: 2x2 pontos brancos */
+.icon-grid {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.icon-grid div {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Ícone Lista: 3 linhas horizontais */
+.icon-list {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon-list::before,
+.icon-list::after,
+.icon-list div {
+  content: "";
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Cards */
 .member-card {
   border: 1px solid #ccc;
   padding: 1rem;
@@ -102,10 +184,12 @@ body {
 
 .member-card img {
   width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
   margin-bottom: 0.5rem;
+  background: #fff;
+  padding: 4px;
 }
 
 .member-card h3 {
@@ -113,9 +197,7 @@ body {
   color: var(--primary);
 }
 
-.member-card p {
-  margin: 0.25rem 0;
-}
+.member-card p { margin: 0.25rem 0; }
 
 .member-card a {
   color: var(--accent);
@@ -123,10 +205,9 @@ body {
   font-weight: bold;
 }
 
-.member-card a:hover {
-  text-decoration: underline;
-}
+.member-card a:hover { text-decoration: underline; }
 
+/* Rodapé */
 footer {
   background: var(--primary);
   color: #fff;
@@ -145,13 +226,8 @@ footer {
   margin: 2rem 0;
 }
 
-.footer-left {
-  text-align: left;
-}
-
-.footer-right {
-  text-align: right;
-}
+.footer-left { text-align: left; }
+.footer-right { text-align: right; }
 
 .footer-social {
   display: flex;
@@ -165,6 +241,7 @@ footer {
   text-decoration: none;
 }
 
+/* Seções adicionais */
 .inicio {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -180,9 +257,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .inicio {
-    grid-template-columns: 1fr;
-  }
+  .inicio { grid-template-columns: 1fr; }
 }
 
 .hero {
@@ -213,9 +288,7 @@ footer {
   cursor: pointer;
 }
 
-.hero button:hover {
-  background: #e68900;
-}
+.hero button:hover { background: #e68900; }
 
 #clima p, #previsao p {
   display: flex;

@@ -4,7 +4,7 @@
     "address": "Av. Tamandaré, 1758 - Santana do Livramento",
     "phone": "(55) 3621-3435",
     "website": "https://www.churrascariacoisanossa.com.br/",
-    "image": "imagens/coisanossa.png",
+    "image": "imagens/coisanossa.webp",
     "membership": "Ouro"
   },
   {
@@ -12,7 +12,7 @@
     "address": "Av. Tamandaré, 1569 - Santana do Livramento",
     "phone": "(55) 3965-0052",
     "website": "https://www.supernicolini.com.br/",
-    "image": "imagens/Nicolini.png",
+    "image": "imagens/Nicolini.webp",
     "membership": "Prata"
   },
   {
@@ -20,7 +20,7 @@
     "address": "R. Brg. David Canabarro, 650 - Santana do Livramento",
     "phone": "(55) 3642-0930",
     "website": "https://www.sesc-rs.com.br/santana_do_livramento/",
-    "image": "imagens/Sesclivramento.png",
+    "image": "imagens/Sesclivramento.webp",
     "membership": "Ouro"
   },
   {
@@ -28,7 +28,7 @@
     "address": "R. Manduca Rodrigues, 747 - Santana do Livramento",
     "phone": "(55) 3242-9300",
     "website": "https://www.verdeplaza.com.br/hotelemlivramento/",
-    "image": "imagens/verdeplaza.png",
+    "image": "imagens/verdeplaza.webp",
     "membership": "Membro"
   },
   {
@@ -36,7 +36,7 @@
     "address": "Av. Tamandaré, 2404 - Santana do Livramento",
     "phone": "(55) 3242-2000",
     "website": "https://www.elgato.com.br/",
-    "image": "imagens/elgato.png",
+    "image": "imagens/ilgato.webp",
     "membership": "Prata"
   },
   {
@@ -44,7 +44,7 @@
     "address": "R. dos Andradas, 484 - Santana do Livramento",
     "phone": "(55) 3621-3647",
     "website": "https://www.boticario.com.br/?utm_source=google&utm_medium=maps&utm_campaign=Fbiz_13382",
-    "image": "imagens/oboticario.png",
+    "image": "imagens/oboticario.webp",
     "membership": "Ouro"
   },
   {
@@ -52,7 +52,7 @@
     "address": "R. Pref. Hugolino Andrade, 1030 - Santana do Livramento",
     "phone": "(55) 99947-9066",
     "website": "https://climvet.com.br/",
-    "image": "imagens/clinvet.webp",
+    "image": "imagens/climvet.webp",
     "membership": "Membro"
   }
 ]

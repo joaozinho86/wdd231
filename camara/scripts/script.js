@@ -42,3 +42,17 @@ const navMenu = document.getElementById("navMenu");
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
+
+document.getElementById("gridBtn").addEventListener("click", () => {
+  membersSection.classList.add("grid-view");
+  membersSection.classList.remove("list-view");
+  document.getElementById("gridBtn").classList.add("active");
+  document.getElementById("listBtn").classList.remove("active");
+});
+
+document.getElementById("listBtn").addEventListener("click", () => {
+  membersSection.classList.add("list-view");
+  membersSection.classList.remove("grid-view");
+  document.getElementById("listBtn").classList.add("active");
+  document.getElementById("gridBtn").classList.remove("active");
+});
