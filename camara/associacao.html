@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Associação - Câmara de Comércio</title>
+
+  <!-- CSS do site (mesmo modelo de index/diretório) -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/style.css">
+
+  <!-- JavaScript separado (com defer para não bloquear renderização) -->
+  <script src="scripts/associacao.js" defer></script>
+</head>
+<body>
+  <!-- Cabeçalho / navegação (mesmo modelo do site) -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="index.html" aria-label="Página inicial">
+        <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio" width="80" height="80">
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="diretorio.html">Diretório</a></li>
+          <li><a href="associacao.html" class="active">Associação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal: grid responsiva (form + aside/cards) -->
+  <main id="main" class="page-grid" role="main">
+    <!-- Coluna do formulário (em mobile aparece acima; em desktop à esquerda) -->
+    <section class="form-column" aria-labelledby="titulo-form">
+      <h1 id="titulo-form">Formulário de Inscrição de Associado</h1>
+
+      <form class="form-associacao" method="get" action="agradecimento.html" novalidate>
+        <!-- Seção 1: Informações Pessoais -->
+        <fieldset class="fieldset-section">
+          <legend>Informações Pessoais</legend>
+
+          <label class="field">
+            <span class="label-text">Nome</span>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              title="Nome do candidato"
+              autocomplete="given-name"
+              required
+              inputmode="text"
+            />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Sobrenome</span>
+            <input
+              type="text"
+              name="sobrenome"
+              id="sobrenome"
+              title="Sobrenome do candidato"
+              autocomplete="family-name"
+              required
+              inputmode="text"
+            />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Cargo na organização</span>
+            <input
+              type="text"
+              name="cargo"
+              id="cargo"
+              title="Cargo na organização"
+              autocomplete="cargo-na-organizacao"
+              pattern="[A-Za-zÀ-ÿ\- ]{7,}"
+              placeholder="Ex: Gerente de Projetos"
+              inputmode="text"
+            />
+            <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
+          </label>
+        </fieldset>
+
+        <!-- Seção 2: Contato -->
+        <fieldset class="fieldset-section">
+          <legend>Contato</legend>
+
+          <label class="field">
+            <span class="label-text">Endereço de e‑mail</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              title="Endereço de e-mail"
+              autocomplete="email"
+              placeholder="exemplo@dominio.com"
+              required
+              inputmode="email"
+            />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Número de celular</span>
+            <input
+              type="tel"
+              name="celular"
+              id="celular"
+              title="Número de celular"
+              autocomplete="tel"
+              placeholder="+55 99 99999-9999"
+              required
+              inputmode="tel"
+            />
+          </label>
+        </fieldset>
+
+        <!-- Seção 3: Organização -->
+        <fieldset class="fieldset-section">
+          <legend>Organização</legend>
+
+          <label class="field">
+            <span class="label-text">Nome da empresa / organização</span>
+            <input
+              type="text"
+              name="organizacao"
+              id="organizacao"
+              title="Nome da empresa ou organização"
+              autocomplete="organization"
+              required
+              inputmode="text"
+            />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Nível de associação</span>
+            <select name="nivel" id="nivel" title="Selecione o nível de associação" required>
+              <option value="np">Associação NP (np) — sem fins lucrativos</option>
+              <option value="bronze">Associação Bronze (bronze)</option>
+              <option value="silver">Associação Prata (silver)</option>
+              <option value="gold">Associação Ouro (gold)</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="label-text">Descrição da atividade / organização</span>
+            <textarea
+              name="descricao"
+              id="descricao"
+              title="Descreva a atividade ou o negócio"
+              rows="4"
+            ></textarea>
+          </label>
+        </fieldset>
+
+        <!-- Campo oculto com data/hora de carregamento -->
+        <input type="hidden" name="registro" id="registro">
+
+        <!-- Ações do formulário (input type submit conforme requisito) -->
+        <div class="form-actions">
+          <input type="submit" value="Solicitar Associação" class="btn-submit">
+        </div>
+      </form>
+    </section>
+
+    <!-- Coluna dos cartões (aside) -->
+    <aside class="cards-column" aria-labelledby="titulo-cards">
+      <h2 id="titulo-cards">Níveis de Associação</h2>
+
+      <ul class="cards-list" role="list">
+        <li class="card" role="listitem">
+          <h3 class="card-title">Associação NP</h3>
+          <p class="card-sub">Sem fins lucrativos — sem taxa</p>
+          <a href="#" class="card-link" data-target="modal-np" role="button">Mais informações</a>
+        </li>
+
+        <li class="card" role="listitem">
+          <h3 class="card-title">Associação Bronze</h3>
+          <p class="card-sub">Bronze — taxa reduzida</p>
+          <a href="#" class="card-link" data-target="modal-bronze" role="button">Mais informações</a>
+        </li>
+
+        <li class="card" role="listitem">
+          <h3 class="card-title">Associação Prata</h3>
+          <p class="card-sub">Prata — benefícios adicionais</p>
+          <a href="#" class="card-link" data-target="modal-prata" role="button">Mais informações</a>
+        </li>
+
+        <li class="card" role="listitem">
+          <h3 class="card-title">Associação Ouro</h3>
+          <p class="card-sub">Ouro — destaque e benefícios premium</p>
+          <a href="#" class="card-link" data-target="modal-ouro" role="button">Mais informações</a>
+        </li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Modais acessíveis usando <dialog> (scripts/associacao.js faz showModal / fallback) -->
+  <dialog id="modal-np" class="modal" aria-labelledby="modal-np-title" aria-modal="true">
+    <div class="modal-inner">
+      <h3 id="modal-np-title">Associação NP</h3>
+      <p>Sem taxa. Benefícios: participação em eventos comunitários, listagem básica no diretório e reconhecimento local.</p>
+      <p><strong>CUSTO:</strong> Gratuito</p>
+      <div class="modal-actions">
+        <button class="close-modal">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="modal-bronze" class="modal" aria-labelledby="modal-bronze-title" aria-modal="true">
+    <div class="modal-inner">
+      <h3 id="modal-bronze-title">Associação Bronze</h3>
+      <p>Taxa reduzida. Benefícios: treinamentos básicos, descontos em eventos e listagem destacada no diretório.</p>
+      <p><strong>CUSTO:</strong> Valor anual reduzido</p>
+      <div class="modal-actions">
+        <button class="close-modal">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="modal-prata" class="modal" aria-labelledby="modal-prata-title" aria-modal="true">
+    <div class="modal-inner">
+      <h3 id="modal-prata-title">Associação Prata</h3>
+      <p>Taxa média. Benefícios: publicidade em páginas internas, treinamentos avançados e descontos em eventos.</p>
+      <p><strong>CUSTO:</strong> Valor anual médio</p>
+      <div class="modal-actions">
+        <button class="close-modal">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="modal-ouro" class="modal" aria-labelledby="modal-ouro-title" aria-modal="true">
+    <div class="modal-inner">
+      <h3 id="modal-ouro-title">Associação Ouro</h3>
+      <p>Taxa premium. Benefícios: destaque na página inicial, convites para eventos exclusivos, publicidade premium e prioridade em parcerias.</p>
+      <p><strong>CUSTO:</strong> Valor anual premium</p>
+      <div class="modal-actions">
+        <button class="close-modal">Fechar</button>
+      </div>
+    </div>
+    </dialog>
+  
+
+  <!-- Rodapé igual às outras páginas -->
+  <footer>
+    <div class="footer-social">
+    <a href="https://youtube.com" target="_blank">
+      <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
+    </a>
+    <a href="https://x.com" target="_blank">
+      <img src="imagens/twitter.png" alt="X" width="32" height="32">
+    </a>
+    <a href="https://linkedin.com" target="_blank">
+      <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
+    </a>
+  </div>
+  </footer>
+
+  <script>
+    // Preenche campo oculto com data/hora atual
+    document.getElementById("registro").value = new Date().toISOString();
+  </script>
+</body>
+</html>

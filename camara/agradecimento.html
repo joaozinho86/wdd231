@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agradecimento - Câmara de Comércio</title>
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio">
+      <h1>Câmara de Comércio</h1>
+    </div>
+  </header>
+
+  <main>
+    <h2>Obrigado pelo seu cadastro!</h2>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Sobrenome:</strong> <span id="sobrenome"></span></p>
+    <p><strong>E-mail:</strong> <span id="email"></span></p>
+    <p><strong>Celular:</strong> <span id="celular"></span></p>
+    <p><strong>Organização:</strong> <span id="organizacao"></span></p>
+    <p><strong>Data/Hora de registro:</strong> <span id="registro"></span></p>
+  </main>
+
+  <footer>
+    <p>© Câmara de Comércio</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("nome").textContent = params.get("nome");
+    document.getElementById("sobrenome").textContent = params.get("sobrenome");
+    document.getElementById("email").textContent = params.get("email");
+    document.getElementById("celular").textContent = params.get("celular");
+    document.getElementById("organizacao").textContent = params.get("organizacao");
+    document.getElementById("registro").textContent = params.get("registro");
+  </script>
+</body>
+</html>
