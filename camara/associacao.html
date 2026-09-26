@@ -46,7 +46,14 @@
     <a class="logo" href="index.html"><img src="imagens/camaracomercio.png" alt="Logo"></a>
   </div>
 
-  <nav class="main-nav" role="navigation" aria-label="Menu principal">
+  <!-- Botão hamburger visível apenas em mobile -->
+  <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+    <span class="hamburger-line" aria-hidden="true"></span>
+    <span class="hamburger-line" aria-hidden="true"></span>
+    <span class="hamburger-line" aria-hidden="true"></span>
+  </button>
+
+  <nav id="navMenu" class="main-nav" role="navigation" aria-label="Menu principal">
     <ul class="menu">
       <li><a href="index.html">Início</a></li>
       <li><a href="diretorio.html">Diretório</a></li>

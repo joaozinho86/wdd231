@@ -299,3 +299,47 @@
   });
 
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.getElementById('hamburgerBtn');
+  var nav = document.getElementById('navMenu');
+
+  if (!btn || !nav) return;
+
+  function openMenu() {
+    nav.classList.add('show');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    // opcional: foco no primeiro link
+    var first = nav.querySelector('a');
+    if (first) first.focus();
+  }
+
+  function closeMenu() {
+    nav.classList.remove('show');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  btn.addEventListener('click', function (e) {
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    if (expanded) closeMenu(); else openMenu();
+  });
+
+  // Fecha ao clicar fora do menu
+  document.addEventListener('click', function (e) {
+    if (!nav.classList.contains('show')) return;
+    if (e.target === nav || nav.contains(e.target) || e.target === btn || btn.contains(e.target)) return;
+    closeMenu();
+  });
+
+  // Fecha ao redimensionar para desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  // Fecha com ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+});
