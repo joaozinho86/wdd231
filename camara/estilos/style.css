@@ -263,6 +263,7 @@ footer {
 .hero {
   background: url("../imagens/Livramento.png") center/cover no-repeat;
   min-height: 400px;
+  width: 100%;         /* garante largura */
   display: flex;
   justify-content: flex-end;
   align-items: center;
