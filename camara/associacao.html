@@ -40,31 +40,31 @@
   <script src="scripts/associacao.js" defer></script>
 </head>
 <body>
-  <!-- Cabeçalho / navegação (mesmo modelo do site) -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Página inicial">
-        <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio" width="80" height="80">
-      </a>
+  <!-- Cabeçalho / navegação (mesmo padrão do site) -->
+  <header class="site-header">
+  <div class="logo-area">
+    <a class="logo" href="index.html"><img src="imagens/camaracomercio.png" alt="Logo"></a>
+  </div>
 
-      <nav class="main-nav" role="navigation" aria-label="Menu principal">
-        <ul class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="diretorio.html">Diretório</a></li>
-          <li><a href="associacao.html" class="active">Associação</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <nav class="main-nav" role="navigation" aria-label="Menu principal">
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="diretorio.html">Diretório</a></li>
+      <li><a href="associacao.html" class="active">Participar</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Conteúdo principal: grid responsiva (form + aside/cards) -->
-  <main id="main" class="page-grid" role="main">
-    <!-- Coluna do formulário (em mobile aparece acima; em desktop à esquerda) -->
+
+  <!-- MAIN: grid responsivo. Em CSS: .page-grid deve usar grid ou flex para colocar form à esquerda e cards à direita em desktop; empilhar em mobile -->
+  <main class="associacao-container" role="main" aria-labelledby="titulo-form">
+    
+    <!-- Coluna do formulário (visualmente à esquerda em desktop) -->
     <section class="form-column" aria-labelledby="titulo-form">
       <h1 id="titulo-form">Formulário de Inscrição de Associado</h1>
 
       <form class="form-associacao" method="get" action="agradecimento.html" novalidate>
-        <!-- Seção 1: Informações Pessoais -->
+        <!-- Informações Pessoais -->
         <fieldset class="fieldset-section">
           <legend>Informações Pessoais</legend>
 
@@ -77,7 +77,6 @@
               title="Nome do candidato"
               autocomplete="given-name"
               required
-              inputmode="text"
             />
           </label>
 
@@ -90,7 +89,6 @@
               title="Sobrenome do candidato"
               autocomplete="family-name"
               required
-              inputmode="text"
             />
           </label>
 
@@ -104,13 +102,12 @@
               autocomplete="cargo-na-organizacao"
               pattern="[A-Za-zÀ-ÿ\- ]{7,}"
               placeholder="Ex: Gerente de Projetos"
-              inputmode="text"
             />
             <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
           </label>
         </fieldset>
 
-        <!-- Seção 2: Contato -->
+        <!-- Contato -->
         <fieldset class="fieldset-section">
           <legend>Contato</legend>
 
@@ -124,7 +121,6 @@
               autocomplete="email"
               placeholder="exemplo@dominio.com"
               required
-              inputmode="email"
             />
           </label>
 
@@ -138,12 +134,11 @@
               autocomplete="tel"
               placeholder="+55 99 99999-9999"
               required
-              inputmode="tel"
             />
           </label>
         </fieldset>
 
-        <!-- Seção 3: Organização -->
+        <!-- Organização -->
         <fieldset class="fieldset-section">
           <legend>Organização</legend>
 
@@ -156,7 +151,6 @@
               title="Nome da empresa ou organização"
               autocomplete="organization"
               required
-              inputmode="text"
             />
           </label>
 
@@ -184,14 +178,14 @@
         <!-- Campo oculto com data/hora de carregamento -->
         <input type="hidden" name="registro" id="registro">
 
-        <!-- Ações do formulário (input type submit conforme requisito) -->
+        <!-- Botão de envio (input type submit conforme requisito) -->
         <div class="form-actions">
           <input type="submit" value="Solicitar Associação" class="btn-submit">
         </div>
       </form>
     </section>
 
-    <!-- Coluna dos cartões (aside) -->
+    <!-- Coluna dos níveis (visualmente à direita em desktop) -->
     <aside class="cards-column" aria-labelledby="titulo-cards">
       <h2 id="titulo-cards">Níveis de Associação</h2>
 
@@ -199,38 +193,44 @@
         <li class="card" role="listitem">
           <h3 class="card-title">Associação NP</h3>
           <p class="card-sub">Sem fins lucrativos — sem taxa</p>
-          <a href="#" class="card-link" data-target="modal-np" role="button">Mais informações</a>
+          <a class="card-link" href="#" data-modal="modal-np" role="button" aria-controls="modal-np" aria-expanded="false">Mais informações</a>
         </li>
 
         <li class="card" role="listitem">
           <h3 class="card-title">Associação Bronze</h3>
           <p class="card-sub">Bronze — taxa reduzida</p>
-          <a href="#" class="card-link" data-target="modal-bronze" role="button">Mais informações</a>
+          <a class="card-link" href="#" data-modal="modal-bronze" role="button" aria-controls="modal-bronze" aria-expanded="false">Mais informações</a>
         </li>
 
         <li class="card" role="listitem">
           <h3 class="card-title">Associação Prata</h3>
           <p class="card-sub">Prata — benefícios adicionais</p>
-          <a href="#" class="card-link" data-target="modal-prata" role="button">Mais informações</a>
+          <a class="card-link" href="#" data-modal="modal-prata" role="button" aria-controls="modal-prata" aria-expanded="false">Mais informações</a>
         </li>
 
         <li class="card" role="listitem">
           <h3 class="card-title">Associação Ouro</h3>
           <p class="card-sub">Ouro — destaque e benefícios premium</p>
-          <a href="#" class="card-link" data-target="modal-ouro" role="button">Mais informações</a>
+          <a class="card-link" href="#" data-modal="modal-ouro" role="button" aria-controls="modal-ouro" aria-expanded="false">Mais informações</a>
         </li>
       </ul>
     </aside>
   </main>
 
-  <!-- Modais acessíveis usando <dialog> (scripts/associacao.js faz showModal / fallback) -->
+  <!-- Modais (HTML <dialog>) para cada nível -->
   <dialog id="modal-np" class="modal" aria-labelledby="modal-np-title" aria-modal="true">
     <div class="modal-inner">
       <h3 id="modal-np-title">Associação NP</h3>
-      <p>Sem taxa. Benefícios: participação em eventos comunitários, listagem básica no diretório e reconhecimento local.</p>
+      <p>Benefícios:</p>
+      <ul>
+        <li>Participação em eventos comunitários</li>
+        <li>Listagem no diretório com selo NP</li>
+        <li>Acesso a treinamentos básicos</li>
+      </ul>
       <p><strong>CUSTO:</strong> Gratuito</p>
       <div class="modal-actions">
         <button class="close-modal">Fechar</button>
+        <a class="btn-primary" href="associacao.html#titulo-form">Solicitar Associação</a>
       </div>
     </div>
   </dialog>
@@ -238,10 +238,16 @@
   <dialog id="modal-bronze" class="modal" aria-labelledby="modal-bronze-title" aria-modal="true">
     <div class="modal-inner">
       <h3 id="modal-bronze-title">Associação Bronze</h3>
-      <p>Taxa reduzida. Benefícios: treinamentos básicos, descontos em eventos e listagem destacada no diretório.</p>
+      <p>Benefícios:</p>
+      <ul>
+        <li>Treinamentos básicos</li>
+        <li>Descontos em eventos</li>
+        <li>Listagem destacada no diretório</li>
+      </ul>
       <p><strong>CUSTO:</strong> Valor anual reduzido</p>
       <div class="modal-actions">
         <button class="close-modal">Fechar</button>
+        <a class="btn-primary" href="associacao.html#titulo-form">Solicitar Associação</a>
       </div>
     </div>
   </dialog>
@@ -249,25 +255,42 @@
   <dialog id="modal-prata" class="modal" aria-labelledby="modal-prata-title" aria-modal="true">
     <div class="modal-inner">
       <h3 id="modal-prata-title">Associação Prata</h3>
-      <p>Taxa média. Benefícios: publicidade em páginas internas, treinamentos avançados e descontos em eventos.</p>
+      <p>Benefícios:</p>
+      <ul>
+        <li>Publicidade em páginas internas</li>
+        <li>Treinamentos avançados</li>
+        <li>Descontos em eventos</li>
+      </ul>
       <p><strong>CUSTO:</strong> Valor anual médio</p>
       <div class="modal-actions">
         <button class="close-modal">Fechar</button>
+        <a class="btn-primary" href="associacao.html#titulo-form">Solicitar Associação</a>
       </div>
     </div>
   </dialog>
 
   <dialog id="modal-ouro" class="modal" aria-labelledby="modal-ouro-title" aria-modal="true">
-    <div class="modal-inner">
-      <h3 id="modal-ouro-title">Associação Ouro</h3>
-      <p>Taxa premium. Benefícios: destaque na página inicial, convites para eventos exclusivos, publicidade premium e prioridade em parcerias.</p>
-      <p><strong>CUSTO:</strong> Valor anual premium</p>
-      <div class="modal-actions">
-        <button class="close-modal">Fechar</button>
-      </div>
+  <div class="modal-inner">
+    <!-- Botão de fechar no canto superior direito -->
+    <button class="modal-close-topright close-modal" aria-label="Fechar modal">✕</button>
+
+    <h3 id="modal-ouro-title">Associação Ouro</h3>
+    <p>Benefícios:</p>
+    <ul>
+      <li>Destaque na página inicial</li>
+      <li>Convites para eventos especiais</li>
+      <li>Publicidade premium e prioridade em parcerias</li>
+      <li>Descontos e brindes exclusivos</li>
+    </ul>
+    <p><strong>CUSTO:</strong> Valor anual premium</p>
+
+    <!-- Apenas botão Fechar aqui; removido "Solicitar Associação" -->
+    <div class="modal-actions">
+      <button class="close-modal" type="button">Fechar</button>
     </div>
-    </dialog>
-  
+  </div>
+</dialog>
+
 
   <!-- Rodapé igual às outras páginas -->
   <footer>
