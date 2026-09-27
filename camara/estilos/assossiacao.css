@@ -1,19 +1,63 @@
-/* associacao.css - layout do formulário e níveis */
-
-/* Variáveis */
 :root {
-  --primary: #0a5a4a;
-  --accent: #e68900;
-  --bg: #f6f7f5;
+  --primary: #004d40;
+  --secondary: #f9f9f9;
+  --accent: #ff9800;
+  --text: #333;
+
   --panel: #fff;
+  --radius: 6px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
   --muted: #666;
-  --radius: 10px;
-  --shadow: 0 8px 24px rgba(0,0,0,0.08);
   --max-width: 1200px;
   --aside-width: 360px;
 }
 
-/* Container principal */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Cabeçalho */
+.site-header {
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-area { display: flex; align-items: center; gap: 0.75rem; }
+.logo-area img { width: 50px; }
+
+.menu { list-style: none; display: flex; gap: 1rem; }
+.menu a { color: #fff; text-decoration: none; }
+.menu a.active { font-weight: bold; border-bottom: 2px solid var(--accent); }
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  #navMenu {
+    display: none;
+    flex-direction: column;
+    background: var(--primary);
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
+  #navMenu.show { display: flex; }
+  .menu { flex-direction: column; gap: 0.5rem; align-items: center; }
+}
+
+/* Página associação */
 .associacao-container {
   width: min(96%, var(--max-width));
   margin: 2rem auto;
@@ -22,36 +66,36 @@
   gap: 2rem;
   align-items: start;
 }
-
-/* Mobile: empilha */
 @media (max-width: 880px) {
   .associacao-container { grid-template-columns: 1fr; }
   .form-column { order: 1; }
   .cards-column { order: 2; margin-top: 1rem; }
 }
 
-/* Formulário */
 .form-column {
   background: var(--panel);
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+
+/* Fieldsets em grid */
 .form-associacao fieldset {
   border: 1px solid #ddd;
   border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
-.form-associacao legend {
-  font-weight: 700;
-  color: var(--primary);
-}
+.form-associacao legend { font-weight: 700; color: var(--primary); }
 .form-associacao label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 0.35rem;
 }
 .form-associacao input,
 .form-associacao select,
@@ -64,6 +108,10 @@
   background: #fff;
 }
 .form-associacao textarea { min-height: 100px; resize: vertical; }
+
+/* Campos que ocupam toda a largura */
+.form-associacao .full { grid-column: 1 / -1; }
+
 .form-actions { margin-top: 1rem; }
 .btn-submit {
   background: var(--accent);
@@ -76,8 +124,12 @@
 }
 .btn-submit:hover { background: #d97706; }
 
-/* Cards */
-.cards-column {}
+/* Responsividade */
+@media (max-width: 600px) {
+  .form-associacao fieldset { grid-template-columns: 1fr; }
+}
+
+/* Cards lateral */
 .cards-list {
   list-style: none;
   margin: 0;
@@ -105,27 +157,6 @@
   font-weight: 600;
 }
 .card a[data-modal]:hover { background: rgba(10,90,74,0.08); }
-
-/* Navegação */
-.main-nav .menu {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.main-nav .menu a {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #fff;
-}
-.main-nav .menu a.active {
-  background: #fff;
-  color: var(--primary);
-  box-shadow: var(--shadow);
-}
 
 /* Modal */
 dialog.modal { border: none; padding: 0; }

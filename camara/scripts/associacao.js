@@ -248,98 +248,45 @@
     });
   }
 
-  // --- Inicialização do formulário e prevenção de múltiplos envios ---
-  function initForm() {
-    var form = document.querySelector('.form-associacao');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      // se inválido, deixa o navegador mostrar mensagens
-      if (!form.checkValidity()) {
-        var submit = form.querySelector('[type="submit"], .btn-submit');
-        if (submit) {
-          submit.disabled = true;
-          setTimeout(function () { submit.disabled = false; }, 300);
+    // --- Inicialização do Menu Hambúrguer (Mobile) ---
+  function initMobileMenu() {
+    var hamburgerBtn = document.getElementById("hamburgerBtn");
+    var navMenu = document.getElementById("navMenu");
+
+    if (hamburgerBtn && navMenu) {
+      hamburgerBtn.addEventListener("click", function (e) {
+        e.stopPropagation(); // Evita conflitos com cliques globais no body
+        navMenu.classList.toggle("show");
+        
+        var isOpen = navMenu.classList.contains("show");
+        hamburgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      // Fecha o menu automaticamente ao clicar em um link interno
+      navMenu.addEventListener("click", function (e) {
+        if (e.target.tagName && e.target.tagName.toLowerCase() === 'a') {
+          navMenu.classList.remove("show");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
         }
-        return;
-      }
-      var submit = form.querySelector('[type="submit"], .btn-submit');
-      if (submit) {
-        submit.disabled = true;
-        submit.setAttribute('aria-disabled', 'true');
-      }
-      // formulário GET redirecionará para agradecimento.html automaticamente
-    });
+      });
+    }
   }
 
-  // --- Associação de labels (melhora acessibilidade) ---
-  function enhanceLabels() {
-    var fields = document.querySelectorAll('.form-associacao .field');
-    fields.forEach(function (field, idx) {
-      var input = field.querySelector('input, select, textarea');
-      var labelText = field.querySelector('.label-text');
-      if (!input || !labelText) return;
-      if (!input.id) input.id = 'field-' + idx;
-      if (!labelText.id) labelText.id = 'label-' + idx;
-      // se não houver label pai, associa via aria-labelledby
-      if (!field.closest('label')) input.setAttribute('aria-labelledby', labelText.id);
-    });
-  }
-
-  // --- Inicialização principal ---
-  document.addEventListener('DOMContentLoaded', function () {
-    // Preenche registro
-    var registro = document.getElementById('registro');
-    if (registro) registro.value = new Date().toISOString();
-
+  // --- Inicialização Geral após o DOM carregar ---
+  document.addEventListener("DOMContentLoaded", function () {
+    // Executa as rotinas nativas do seu script para modais
     initTriggers();
     initGlobalKeys();
     initDialogBackdropClicks();
-    initForm();
-    enhanceLabels();
+    
+    // Executa o novo controle do menu hambúrguer
+    initMobileMenu();
+
+    // Configuração do timestamp do formulário (conforme as linhas finais cortadas)
+    var registroInput = document.getElementById("registro");
+    if (registroInput) {
+      registroInput.value = new Date().toISOString();
+    }
   });
 
 })();
-
-document.addEventListener('DOMContentLoaded', function () {
-  var btn = document.getElementById('hamburgerBtn');
-  var nav = document.getElementById('navMenu');
-
-  if (!btn || !nav) return;
-
-  function openMenu() {
-    nav.classList.add('show');
-    btn.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-    // opcional: foco no primeiro link
-    var first = nav.querySelector('a');
-    if (first) first.focus();
-  }
-
-  function closeMenu() {
-    nav.classList.remove('show');
-    btn.classList.remove('open');
-    btn.setAttribute('aria-expanded', 'false');
-  }
-
-  btn.addEventListener('click', function (e) {
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    if (expanded) closeMenu(); else openMenu();
-  });
-
-  // Fecha ao clicar fora do menu
-  document.addEventListener('click', function (e) {
-    if (!nav.classList.contains('show')) return;
-    if (e.target === nav || nav.contains(e.target) || e.target === btn || btn.contains(e.target)) return;
-    closeMenu();
-  });
-
-  // Fecha ao redimensionar para desktop
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) closeMenu();
-  });
-
-  // Fecha com ESC
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
-  });
-});

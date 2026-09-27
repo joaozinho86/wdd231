@@ -3,7 +3,15 @@
   --secondary: #f9f9f9;
   --accent: #ff9800;
   --text: #333;
+
+  --max-width: 1200px;
+  --aside-width: 320px;
+  --panel: #ffffff;
+  --radius: 6px;
+  --shadow: 0 2px 4px rgba(0,0,0,.1);
+  --muted: #666;
 }
+
 
 body {
   font-family: 'Roboto', Arial, sans-serif;
@@ -27,9 +35,7 @@ body {
   gap: 0.75rem;
 }
 
-.logo-area img {
-  width: 50px;
-}
+.logo-area img { width: 50px; }
 
 .menu {
   list-style: none;
@@ -64,6 +70,7 @@ body {
     flex-direction: column;
     background: var(--primary);
     padding: 1rem;
+    border-radius: var(--radius);
   }
 
   #navMenu.show { display: flex; }
@@ -91,13 +98,13 @@ body {
 
 #members.list-view .member-card {
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr 2fr; /* Nome, endereço, telefone, site */
+  grid-template-columns: 2fr 3fr 2fr 2fr;
   align-items: center;
   text-align: left;
   padding: 0.5rem 1rem;
   background: var(--secondary);
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: var(--radius);
   box-shadow: none;
 }
 
@@ -115,9 +122,9 @@ body {
 .view-options {
   width: 100%;
   display: flex;
-  justify-content: center;   /* centraliza horizontalmente */
+  justify-content: center;
   align-items: center;
-  gap: 1rem;                 /* espaço entre os botões */
+  gap: 1rem;
   margin: 1rem 0;
 }
 
@@ -126,17 +133,16 @@ body {
   background: var(--primary);
   border: none;
   padding: 0.75rem;
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.toggle-btn:hover { background: var(--accent); }
+.toggle-btn:hover,
 .toggle-btn.active { background: var(--accent); }
 
-/* Ícone Grade: 2x2 pontos brancos */
+/* Ícones */
 .icon-grid {
   width: 20px;
   height: 20px;
@@ -145,15 +151,12 @@ body {
   grid-template-rows: repeat(2, 1fr);
   gap: 4px;
 }
-
 .icon-grid div {
   width: 6px;
   height: 6px;
   background: #fff;
   border-radius: 50%;
 }
-
-/* Ícone Lista: 3 linhas horizontais */
 .icon-list {
   width: 20px;
   height: 20px;
@@ -161,7 +164,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .icon-list::before,
 .icon-list::after,
 .icon-list div {
@@ -177,34 +179,25 @@ body {
   border: 1px solid #ccc;
   padding: 1rem;
   background: var(--secondary);
-  border-radius: 6px;
+  border-radius: var(--radius);
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  box-shadow: var(--shadow);
 }
-
 .member-card img {
   width: 100px;
   height: auto;
   object-fit: contain;
-  border-radius: 0;
   margin-bottom: 0.5rem;
   background: #fff;
   padding: 4px;
 }
-
-.member-card h3 {
-  margin: 0.5rem 0;
-  color: var(--primary);
-}
-
+.member-card h3 { margin: 0.5rem 0; color: var(--primary); }
 .member-card p { margin: 0.25rem 0; }
-
 .member-card a {
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }
-
 .member-card a:hover { text-decoration: underline; }
 
 /* Rodapé */
@@ -218,23 +211,13 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-
-#empresas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
 .footer-left { text-align: left; }
 .footer-right { text-align: right; }
-
 .footer-social {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
-
 .footer-social a {
   color: #fff;
   font-size: 1.5rem;
@@ -248,18 +231,15 @@ footer {
   gap: 1rem;
   margin: 2rem 0;
 }
-
 .info-box {
   background: var(--secondary);
   padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-
 @media (max-width: 768px) {
   .inicio { grid-template-columns: 1fr; }
 }
-
 .hero {
   background: url("../imagens/Livramento.png") center/cover no-repeat;
   min-height: 400px;
@@ -269,103 +249,118 @@ footer {
   padding: 2rem;
   color: #fff;
 }
-
 .hero-content {
   background: rgba(0,0,0,0.5);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   max-width: 400px;
   text-align: left;
 }
-
 .hero button {
   background: var(--accent);
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   cursor: pointer;
 }
-
 .hero button:hover { background: #e68900; }
 
-#clima p, #previsao p {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.25rem 0;
-}
-
-#clima img, #previsao img {
-  width: 32px;
-  height: 32px;
-}
-
-//pagina associacao
-.form-associacao {
-  max-width: 600px;   /* largura máxima para centralizar */
-  margin: 0 auto;     /* centraliza na página */
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;        /* espaço entre seções */
-}
-
-fieldset {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;          /* espaço entre os inputs */
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  color: var(--primary);
-}
-
-input, select, textarea, button {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-button {
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #e68900;
-}
-
-
-
-/* Container principal */
+/* Página associação */
 .associacao-container {
   width: min(96%, var(--max-width));
   margin: 2rem auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) var(--aside-width);
-  gap: 2rem;
+  grid-template-columns: 1fr var(--aside-width); /* Divide em formulário e coluna lateral */
+  gap: 3rem; /* Espaço generoso entre as duas colunas igual à foto */
   align-items: start;
 }
 
-/* Mobile: empilha */
+/* --- CONFIGURAÇÃO DO BOTÃO HAMBÚRGUER --- */
+.hamburger {
+  display: none; /* Escondido por padrão no Desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent !important; /* Remove qualquer fundo padrão */
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  z-index: 999;
+}
+
+/* Estilização das 3 linhas brancas */
+.hamburger .hamburger-line {
+  display: block !important;
+  visibility: visible !important;
+  width: 100%;
+  height: 3px; /* Espessura da linha */
+  background-color: #ffffff !important; /* Cor branca das linhas */
+  border-radius: 3px;
+  content: "";
+}
+
+/* Garante que o cabeçalho seja a referência absoluta para o menu */
+.site-header {
+  position: relative !important;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+
+  /* AJUSTE DO MENU CORRIGIDO: */
+  #navMenu {
+    display: none; 
+    position: absolute !important;
+    top: 100% !important; /* Fixa exatamente abaixo do header verde */
+    left: 0 !important;
+    width: 100% !important;
+    background-color: var(--primary) !important;
+    padding: 1.5rem 0 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    z-index: 9999 !important; /* Joga o menu para a frente de qualquer formulário ou input */
+    margin: 0 !important;
+  }
+
+  #navMenu.show {
+    display: flex !important;
+  }
+
+  .main-nav .menu {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .main-nav .menu li {
+    width: 100% !important;
+    text-align: center !important;
+    list-style: none !important;
+  }
+
+  .main-nav .menu a {
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+
 @media (max-width: 880px) {
   .associacao-container { grid-template-columns: 1fr; }
   .form-column { order: 1; }
   .cards-column { order: 2; margin-top: 1rem; }
 }
 
-/* Formulário */
 .form-column {
   background: var(--panel);
   padding: 1.5rem;
@@ -378,23 +373,30 @@ button:hover {
   padding: 1rem;
   margin-bottom: 1rem;
 }
-.form-associacao legend {
-  font-weight: 700;
-  color: var(--primary);
-}
+.form-associacao legend { font-weight: 700; color: var(--primary); }
 .form-associacao label {
   display: block;
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 0.35rem;
 }
+
+.form-associacao {
+  width: 100%; /* Mudado de max-width 600px para 100% */
+  margin: 0;     
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; 
+}
+
 .form-associacao input,
 .form-associacao select,
 .form-associacao textarea {
   width: 100%;
-  padding: 0.6rem 0.75rem;
+  box-sizing: border-box; /* Evita que o padding jogue o input para fora */
+  padding: 0.6rem;
   border: 1px solid #ccc;
-  border-radius: var(--radius);
+  border-radius: 4px;
   font: inherit;
   background: #fff;
 }
@@ -411,97 +413,64 @@ button:hover {
 }
 .btn-submit:hover { background: #d97706; }
 
-/* Cards */
-.cards-column {}
-.cards-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+/* Cards associação */
+/* Container de cada nível */
 .card {
-  background: var(--panel);
-  border: 1px solid #eee;
-  border-radius: var(--radius);
-  padding: 1rem;
-  box-shadow: var(--shadow);
-}
-.card h4 { margin: 0 0 0.25rem; color: var(--primary); }
-.card p { margin: 0 0 0.75rem; color: var(--muted); }
-.card a[data-modal] {
-  display: inline-block;
-  padding: 0.5rem 0.8rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 600;
-}
-.card a[data-modal]:hover { background: rgba(10,90,74,0.08); }
-
-/* Navegação */
-.main-nav .menu {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.main-nav .menu a {
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #fff;
-}
-.main-nav .menu a.active {
-  background: #fff;
-  color: var(--primary);
-  box-shadow: var(--shadow);
-}
-
-/* Modal */
-dialog.modal { border: none; padding: 0; }
-.modal-inner {
-  position: relative;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
   padding: 1.25rem;
-  background: #fff;
-  border-radius: var(--radius);
-  max-width: 520px;
+  margin-bottom: 1rem;
+  box-shadow: none; /* Remove sombras tridimensionais */
 }
-.modal-close-topright {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
-  background: #fff;
-  color: var(--primary);
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  padding: 0.35rem 0.5rem;
-  cursor: pointer;
-  font-weight: 700;
-}
-.modal-actions { margin-top: 1rem; text-align: right; }
 
-/* Social icons */
-.footer-social {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-top: 2rem;
+.card h3 {
+  margin: 0 0 0.25rem 0;
+  color: #004d40;
+  font-size: 1.2rem;
 }
-.footer-social a {
-  display: inline-flex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--primary);
-  align-items: center;
-  justify-content: center;
+
+.card-sub {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: #757575;
+}
+
+/* O botão "Mais informações" exatamente como na foto */
+.card a[data-modal], .card-link {
+  display: inline-block; /* Mantém ele curto, sem ocupar a linha toda */
+  background-color: #f5f5f5; /* Fundo cinza claro */
+  color: #333333; /* Texto escuro */
+  border: 1px solid #9e9e9e; /* Borda cinza */
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
   text-decoration: none;
-  box-shadow: var(--shadow);
+  font-weight: 500;
+  font-size: 0.85rem;
 }
-.footer-social a:hover { transform: translateY(-2px); }
+
+.card a[data-modal]:hover, .card-link:hover {
+  background-color: #e0e0e0;
+}
+/* Força a visibilidade e o estilo correto do botão de envio */
+.btn-submit, input[type="submit"].btn-submit {
+  display: block !important;
+  visibility: visible !important;
+  width: auto;
+  min-width: 180px;
+  background-color: var(--accent) !important; /* Cor laranja de destaque */
+  color: #ffffff !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius, 4px);
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-submit:hover, input[type="submit"].btn-submit:hover {
+  background-color: #e68900 !important; /* Tom mais escuro no hover */
+}
