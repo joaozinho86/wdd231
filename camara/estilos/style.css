@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  position: relative !important; /* Moveu para manter escopo do menu absoluto */
+  position: relative !important;
 }
 
 .logo-area {
@@ -55,7 +55,7 @@ body {
 
 /* --- CONFIGURAÇÃO DO BOTÃO HAMBÚRGUER --- */
 .hamburger {
-  display: none; /* Escondido por padrão no Desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -67,7 +67,6 @@ body {
   z-index: 999;
 }
 
-/* Estilização das 3 linhas brancas */
 .hamburger .hamburger-line {
   display: block !important;
   visibility: visible !important;
@@ -138,7 +137,8 @@ body {
   gap: 0.5rem;
 }
 
-#members.list-view .member-card {
+/* NOME DA CLASSE ALTERADO DE .member-card PARA .item-do-membro */
+#members.list-view .item-do-membro {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr 2fr;
   align-items: center;
@@ -150,15 +150,15 @@ body {
   box-shadow: none;
 }
 
-#members.list-view .member-card img { display: none; }
+#members.list-view .item-do-membro img { display: none; }
 
-#members.list-view .member-card h3 {
+#members.list-view .item-do-membro h3 {
   margin: 0;
   color: var(--primary);
 }
 
-#members.list-view .member-card p,
-#members.list-view .member-card a { margin: 0; }
+#members.list-view .item-do-membro p,
+#members.list-view .item-do-membro a { margin: 0; }
 
 /* Container dos botões */
 .view-options {
@@ -216,8 +216,8 @@ body {
   border-radius: 2px;
 }
 
-/* Cards do Diretório */
-.member-card {
+/* Bloco alterado de .member-card para .item-do-membro */
+.item-do-membro {
   border: 1px solid #ccc;
   padding: 1rem;
   background: var(--secondary);
@@ -225,7 +225,7 @@ body {
   text-align: center;
   box-shadow: var(--shadow);
 }
-.member-card img {
+.item-do-membro img {
   width: 100px;
   height: auto;
   object-fit: contain;
@@ -233,14 +233,14 @@ body {
   background: #fff;
   padding: 4px;
 }
-.member-card h3 { margin: 0.5rem 0; color: var(--primary); }
-.member-card p { margin: 0.25rem 0; }
-.member-card a {
+.item-do-membro h3 { margin: 0.5rem 0; color: var(--primary); }
+.item-do-membro p { margin: 0.25rem 0; }
+.item-do-membro a {
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }
-.member-card a:hover { text-decoration: underline; }
+.item-do-membro a:hover { text-decoration: underline; }
 
 /* Rodapé */
 footer {
@@ -367,7 +367,6 @@ footer {
 .form-associacao textarea { min-height: 100px; resize: vertical; }
 .form-actions { margin-top: 1rem; }
 
-/* FIX: Finalização correta e forçada do botão de envio */
 .btn-submit {
   display: inline-block !important;
   visibility: visible !important;
@@ -387,8 +386,8 @@ footer {
   background-color: #e68900 !important;
 }
 
-/* --- CARDS LATERAIS DE NÍVEIS (Recuperados para o layout não quebrar) --- */
-.cards-list {
+/* --- CLASSIFICAÇÃO LATERAL MODIFICADA PARA FUGIR DO BOOTSTRAP --- */
+.lista-niveis-box {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -397,25 +396,28 @@ footer {
   gap: 1rem;
 }
 
-.card {
+/* Mudado de .card para .bloco-nivel */
+.bloco-nivel {
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: var(--radius);
   padding: 1.25rem;
 }
 
-.card h3 {
+.bloco-nivel h3 {
   margin: 0 0 0.25rem 0;
   color: var(--primary);
 }
 
-.card-sub {
+/* Mudado de .card-sub para .subtexto-nivel */
+.subtexto-nivel {
   margin: 0 0 0.75rem 0;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.card-link {
+/* Mudado de .card-link para .link-modal-nivel */
+.link-modal-nivel {
   display: inline-block;
   background-color: #f5f5f5;
   color: #333;
@@ -427,7 +429,7 @@ footer {
   font-weight: 500;
 }
 
-.card-link:hover {
+.link-modal-nivel:hover {
   background-color: #e0e0e0;
 }
 
