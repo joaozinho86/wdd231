@@ -6,7 +6,7 @@
   <title>Associação - Câmara de Comércio | Associe-se</title>
 
   <!-- SEO / Social -->
-  <meta name="description" content="Associe-se à Câmara de Comércio: níveis NP, Bronze, Prata e Ouro com benefícios exclusivos para sua organização." />
+  <meta name="description" content="..." />
   <meta name="author" content="João Correa" />
   <link rel="canonical" href="https://joaozinho86.github.io/wdd231/camara/associacao.html" />
 
@@ -15,27 +15,19 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Câmara de Comércio" />
-  <meta property="og:title" content="Associe-se à Câmara de Comércio — Níveis e Benefícios" />
-  <meta property="og:description" content="Conheça os níveis de associação (NP, Bronze, Prata, Ouro) e seus benefícios. Solicite sua associação online." />
-  <meta property="og:image" content="https://joaozinho86.github.io/wdd231/camara/imagens/associacao-og.png" />
-  <meta property="og:url" content="https://joaozinho86.github.io/wdd231/camara/associacao.html" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Associe-se à Câmara de Comércio" />
-  <meta name="twitter:description" content="Níveis de associação e benefícios. Solicite sua associação online." />
-  <meta name="twitter:image" content="https://joaozinho86.github.io/wdd231/camara/imagens/associacao-og.png" />
+  <!-- ... demais meta og ... -->
 
   <!-- Theme -->
-  <meta name="theme-color" content="#0a5a4a" /> 
+  <meta name="theme-color" content="#0a5a4a" />
 
-  <!-- CSS do site (mesmo modelo de index/diretório) -->
+  <!-- CSS do site -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/style.css">
 
-  <!-- Preconnect to font provider (if used) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google Fonts: preconnect + stylesheet (obrigatório) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <script src="scripts/associacao.js" defer></script>
 </head>
@@ -73,47 +65,47 @@
 
       <form class="form-associacao" method="get" action="agradecimento.html" novalidate>
         <!-- Informações Pessoais -->
-        <fieldset class="fieldset-section">
-          <legend>Informações Pessoais</legend>
+      <fieldset class="fieldset-section">
+        <legend>Informações Pessoais</legend>
 
-          <label class="field">
-            <span class="label-text">Nome</span>
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              title="Nome do candidato"
-              autocomplete="given-name"
-              required
-            />
-          </label>
+        <label class="field">
+          <span class="label-text">Nome</span>
+        <input
+        type="text"
+        name="nome"
+        id="nome"
+        title="Nome do candidato"
+        autocomplete="given-name"
+        required
+      />
+        </label>
 
-          <label class="field">
-            <span class="label-text">Sobrenome</span>
-            <input
-              type="text"
-              name="sobrenome"
-              id="sobrenome"
-              title="Sobrenome do candidato"
-              autocomplete="family-name"
-              required
-            />
-          </label>
+        <label class="field">
+          <span class="label-text">Sobrenome</span>
+        <input
+        type="text"
+        name="sobrenome"
+        id="sobrenome"
+        title="Sobrenome do candidato"
+        autocomplete="family-name"
+        required
+      />
+       </label>
 
-          <label class="field">
-            <span class="label-text">Cargo na organização</span>
-            <input
-              type="text"
-              name="cargo"
-              id="cargo"
-              title="Cargo na organização"
-              autocomplete="cargo-na-organizacao"
-              pattern="[A-Za-zÀ-ÿ\- ]{7,}"
-              placeholder="Ex: Gerente de Projetos"
-            />
-            <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
-          </label>
-        </fieldset>
+       <label class="field">
+        <span class="label-text">Cargo na organização</span>
+        <input
+        type="text"
+        name="cargo"
+        id="cargo"
+        title="Cargo na organização"
+        autocomplete="organization-title"
+        pattern="[A-Za-zÀ-ÿ\- ]{7,}"
+        placeholder="Ex: Gerente de Projetos"
+      />
+      <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
+    </label>
+  </fieldset>
 
         <!-- Contato -->
         <fieldset class="fieldset-section">
@@ -314,10 +306,5 @@
     </a>
   </div>
   </footer>
-
-  <script>
-    // Preenche campo oculto com data/hora atual
-    document.getElementById("registro").value = new Date().toISOString();
-  </script>
 </body>
 </html>
