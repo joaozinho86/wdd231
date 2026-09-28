@@ -322,7 +322,7 @@ footer {
 @media (max-width: 880px) {
   .associacao-container { grid-template-columns: 1fr; }
   .form-column { order: 1; }
-  .cards-column { order: 2; margin-top: 1rem; }
+  .coluna-cartoes { order: 2; margin-top: 1rem; }
 }
 
 .form-column {
@@ -387,7 +387,7 @@ footer {
 }
 
 /* --- CLASSIFICAÇÃO LATERAL MODIFICADA PARA FUGIR DO BOOTSTRAP --- */
-.lista-niveis-box {
+.lista-cartoes {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -396,28 +396,36 @@ footer {
   gap: 1rem;
 }
 
-/* Mudado de .card para .bloco-nivel */
-.bloco-nivel {
+/* Substituído .card por .cartao */
+.cartao {
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: var(--radius);
   padding: 1.25rem;
 }
 
-.bloco-nivel h3 {
+/* Substituído .card-title por .cartao-titulo */
+.cartao-titulo {
   margin: 0 0 0.25rem 0;
   color: var(--primary);
 }
 
-/* Mudado de .card-sub para .subtexto-nivel */
-.subtexto-nivel {
+/* Substituído .card-sub por .cartao-subtitulo */
+.cartao-subtitulo {
   margin: 0 0 0.75rem 0;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* Mudado de .card-link para .link-modal-nivel */
-.link-modal-nivel {
+/* Substituído .card-body por .cartao-corpo */
+.cartao-corpo {
+  padding: 0.5rem 0;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+/* Substituído .card-link por .cartao-link */
+.cartao-link {
   display: inline-block;
   background-color: #f5f5f5;
   color: #333;
@@ -429,8 +437,27 @@ footer {
   font-weight: 500;
 }
 
-.link-modal-nivel:hover {
+.cartao-link:hover {
   background-color: #e0e0e0;
+}
+
+/* Substituído .btn-primary por .botao-primario */
+.botao-primario {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.botao-primario:hover {
+  background-color: var(--accent);
 }
 
 /* Modais nativos */
