@@ -1,111 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Associação - Câmara de Comércio | Associe-se</title>
 
   <!-- SEO / Social -->
-  <meta name="description" content="..." />
-  <meta name="author" content="João Correa" />
-  <link rel="canonical" href="https://joaozinho86.github.io/wdd231/camara/associacao.html" />
+  <meta name="description" content="Associe-se à Câmara de Comércio e escolha entre os níveis NP, Bronze, Prata e Ouro. Benefícios exclusivos para sua organização. Solicite online.">
+  <meta name="author" content="João Correa">
+  <link rel="canonical" href="https://joaozinho86.github.io/wdd231/camara/associacao.html">
 
   <!-- Favicon -->
-  <link rel="icon" href="imagens/favicon.ico" sizes="32x32" type="image/png" />
+  <link rel="icon" href="imagens/favicon.ico" sizes="32x32" type="image/png">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <!-- ... demais meta og ... -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Câmara de Comércio">
+  <meta property="og:title" content="Associe-se à Câmara de Comércio — Níveis e Benefícios">
+  <meta property="og:description" content="Conheça os níveis de associação NP, Bronze, Prata e Ouro, com benefícios exclusivos para sua empresa. Solicite sua associação online.">
+  <meta property="og:image" content="https://joaozinho86.github.io/wdd231/camara/imagens/associacao-og.png">
+  <meta property="og:url" content="https://joaozinho86.github.io/wdd231/camara/associacao.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Associe-se à Câmara de Comércio">
+  <meta name="twitter:description" content="Níveis de associação e benefícios. Solicite sua associação online.">
+  <meta name="twitter:image" content="https://joaozinho86.github.io/wdd231/camara/imagens/associacao-og.png">
 
   <!-- Theme -->
-  <meta name="theme-color" content="#0a5a4a" />
+  <meta name="theme-color" content="#0a5a4a">
 
   <!-- CSS do site -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/style.css">
 
-  <!-- Google Fonts: preconnect + stylesheet (obrigatório) -->
+  <!-- Google Fonts: preconnect + stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <!-- Script externo (único) -->
   <script src="scripts/associacao.js" defer></script>
 </head>
 <body>
-  <!-- Cabeçalho / navegação (mesmo padrão do site) -->
+  <!-- Cabeçalho / navegação -->
   <header class="site-header">
-  <div class="logo-area">
-    <a class="logo" href="index.html"><img src="imagens/camaracomercio.webp" alt="Logo"></a>
-  </div>
+    <div class="logo-area">
+      <a class="logo" href="index.html"><img src="imagens/camaracomercio.webp" alt="Logo"></a>
+    </div>
 
-  <!-- Botão hamburger visível apenas em mobile -->
-  <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-  <span class="hamburger-line"></span>
-  <span class="hamburger-line"></span>
-  <span class="hamburger-line"></span>
-</button>
+    <!-- Botão hamburger visível apenas em mobile -->
+    <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
 
+    <nav id="navMenu" class="main-nav" aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="diretorio.html">Diretório</a></li>
+        <li><a href="associacao.html" class="active">Participar</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav id="navMenu" class="main-nav" role="navigation" aria-label="Menu principal">
-    <ul class="menu">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="diretorio.html">Diretório</a></li>
-      <li><a href="associacao.html" class="active">Participar</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- MAIN -->
+  <main class="associacao-container" aria-labelledby="titulo-form">
 
-
-  <!-- MAIN: grid responsivo. Em CSS: .page-grid deve usar grid ou flex para colocar form à esquerda e cartoes à direita em desktop; empilhar em mobile -->
-  <main class="associacao-container" role="main" aria-labelledby="titulo-form">
-    
-    <!-- Coluna do formulário (visualmente à esquerda em desktop) -->
+    <!-- Coluna do formulário -->
     <section class="form-column" aria-labelledby="titulo-form">
       <h1 id="titulo-form">Formulário de Inscrição de Associado</h1>
 
       <form class="form-associacao" method="get" action="agradecimento.html" novalidate>
         <!-- Informações Pessoais -->
-      <fieldset class="fieldset-section">
-        <legend>Informações Pessoais</legend>
+        <fieldset class="fieldset-section">
+          <legend>Informações Pessoais</legend>
 
-        <label class="field">
-          <span class="label-text">Nome</span>
-        <input
-        type="text"
-        name="nome"
-        id="nome"
-        title="Nome do candidato"
-        autocomplete="given-name"
-        required
-      />
-        </label>
+          <label class="field">
+            <span class="label-text">Nome</span>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              title="Nome do candidato"
+              autocomplete="given-name"
+              required
+            >
+          </label>
 
-        <label class="field">
-          <span class="label-text">Sobrenome</span>
-        <input
-        type="text"
-        name="sobrenome"
-        id="sobrenome"
-        title="Sobrenome do candidato"
-        autocomplete="family-name"
-        required
-      />
-       </label>
+          <label class="field">
+            <span class="label-text">Sobrenome</span>
+            <input
+              type="text"
+              name="sobrenome"
+              id="sobrenome"
+              title="Sobrenome do candidato"
+              autocomplete="family-name"
+              required
+            >
+          </label>
 
-       <label class="field">
-        <span class="label-text">Cargo na organização</span>
-        <input
-        type="text"
-        name="cargo"
-        id="cargo"
-        title="Cargo na organização"
-        autocomplete="organization-title"
-        pattern="[A-Za-zÀ-ÿ\- ]{7,}"
-        placeholder="Ex: Gerente de Projetos"
-      />
-      <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
-    </label>
-  </fieldset>
+          <label class="field">
+            <span class="label-text">Cargo na organização</span>
+            <input
+              type="text"
+              name="cargo"
+              id="cargo"
+              title="Cargo na organização"
+              autocomplete="organization-title"
+              pattern="[A-Za-zÀ-ÿ\- ]{7,}"
+              placeholder="Ex: Gerente de Projetos"
+            >
+            <small class="hint">Mínimo 7 caracteres; letras, hífen e espaços</small>
+          </label>
+        </fieldset>
 
         <!-- Contato -->
         <fieldset class="fieldset-section">
@@ -121,7 +130,7 @@
               autocomplete="email"
               placeholder="exemplo@dominio.com"
               required
-            />
+            >
           </label>
 
           <label class="field">
@@ -134,7 +143,7 @@
               autocomplete="tel"
               placeholder="+55 99 99999-9999"
               required
-            />
+            >
           </label>
         </fieldset>
 
@@ -151,12 +160,13 @@
               title="Nome da empresa ou organização"
               autocomplete="organization"
               required
-            />
+            >
           </label>
 
           <label class="field">
             <span class="label-text">Nível de associação</span>
             <select name="nivel" id="nivel" title="Selecione o nível de associação" required>
+              <option value="">— Selecione um nível —</option>
               <option value="np">Associação NP (np) — sem fins lucrativos</option>
               <option value="bronze">Associação Bronze (bronze)</option>
               <option value="silver">Associação Prata (silver)</option>
@@ -178,37 +188,37 @@
         <!-- Campo oculto com data/hora de carregamento -->
         <input type="hidden" name="registro" id="registro">
 
-        <!-- Botão de envio (input type submit conforme requisito) -->
+        <!-- Botão de envio -->
         <div class="form-actions">
           <input type="submit" value="Solicitar Associação" class="btn-submit">
         </div>
       </form>
     </section>
 
-    <!-- Coluna dos níveis (visualmente à direita em desktop) -->
+    <!-- Coluna dos níveis -->
     <aside class="coluna-cartoes" aria-labelledby="titulo-cartoes">
       <h2 id="titulo-cartoes">Níveis de Associação</h2>
 
-      <ul class="lista-cartoes" role="list">
-        <li class="cartao" role="listitem">
+      <ul class="lista-cartoes">
+        <li class="cartao">
           <h3 class="cartao-titulo">Associação NP</h3>
           <p class="cartao-subtitulo">Sem fins lucrativos — sem taxa</p>
           <a class="cartao-link" href="#" data-modal="modal-np" role="button" aria-controls="modal-np" aria-expanded="false">Mais informações</a>
         </li>
 
-        <li class="cartao" role="listitem">
+        <li class="cartao">
           <h3 class="cartao-titulo">Associação Bronze</h3>
           <p class="cartao-subtitulo">Bronze — taxa reduzida</p>
           <a class="cartao-link" href="#" data-modal="modal-bronze" role="button" aria-controls="modal-bronze" aria-expanded="false">Mais informações</a>
         </li>
 
-        <li class="cartao" role="listitem">
+        <li class="cartao">
           <h3 class="cartao-titulo">Associação Prata</h3>
           <p class="cartao-subtitulo">Prata — benefícios adicionais</p>
           <a class="cartao-link" href="#" data-modal="modal-prata" role="button" aria-controls="modal-prata" aria-expanded="false">Mais informações</a>
         </li>
 
-        <li class="cartao" role="listitem">
+        <li class="cartao">
           <h3 class="cartao-titulo">Associação Ouro</h3>
           <p class="cartao-subtitulo">Ouro — destaque e benefícios premium</p>
           <a class="cartao-link" href="#" data-modal="modal-ouro" role="button" aria-controls="modal-ouro" aria-expanded="false">Mais informações</a>
@@ -270,41 +280,38 @@
   </dialog>
 
   <dialog id="modal-ouro" class="modal" aria-labelledby="modal-ouro-title" aria-modal="true">
-  <div class="modal-inner">
-    <!-- Botão de fechar no canto superior direito -->
-    <button class="modal-close-topright close-modal" aria-label="Fechar modal">✕</button>
+    <div class="modal-inner">
+      <button class="modal-close-topright close-modal" aria-label="Fechar modal">✕</button>
 
-    <h3 id="modal-ouro-title">Associação Ouro</h3>
-    <p>Benefícios:</p>
-    <ul>
-      <li>Destaque na página inicial</li>
-      <li>Convites para eventos especiais</li>
-      <li>Publicidade premium e prioridade em parcerias</li>
-      <li>Descontos e brindes exclusivos</li>
-    </ul>
-    <p><strong>CUSTO:</strong> Valor anual premium</p>
+      <h3 id="modal-ouro-title">Associação Ouro</h3>
+      <p>Benefícios:</p>
+      <ul>
+        <li>Destaque na página inicial</li>
+        <li>Convites para eventos especiais</li>
+        <li>Publicidade premium e prioridade em parcerias</li>
+        <li>Descontos e brindes exclusivos</li>
+      </ul>
+      <p><strong>CUSTO:</strong> Valor anual premium</p>
 
-    <!-- Apenas botão Fechar aqui; removido "Solicitar Associação" -->
-    <div class="modal-actions">
-      <button class="close-modal" type="button">Fechar</button>
+      <div class="modal-actions">
+        <button class="close-modal" type="button">Fechar</button>
+      </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
-
-  <!-- Rodapé igual às outras páginas -->
+  <!-- Rodapé -->
   <footer>
     <div class="footer-social">
-    <a href="https://youtube.com" target="_blank">
-      <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
-    </a>
-    <a href="https://x.com" target="_blank">
-      <img src="imagens/twitter.png" alt="X" width="32" height="32">
-    </a>
-    <a href="https://linkedin.com" target="_blank">
-      <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
-    </a>
-  </div>
+      <a href="https://youtube.com" target="_blank">
+        <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
+      </a>
+      <a href="https://x.com" target="_blank">
+        <img src="imagens/twitter.png" alt="X" width="32" height="32">
+      </a>
+      <a href="https://linkedin.com" target="_blank">
+        <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
+      </a>
+    </div>
   </footer>
 </body>
 </html>
