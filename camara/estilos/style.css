@@ -53,8 +53,8 @@ body {
   border-bottom: 2px solid var(--accent);
 }
 
-/* --- CONFIGURAÇÃO DO BOTÃO HAMBÚRGUER --- */
-.hamburger {
+/* --- BOTÃO HAMBÚRGUER --- */
+.botao-menu-mobile {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -67,7 +67,7 @@ body {
   z-index: 999;
 }
 
-.hamburger .hamburger-line {
+.botao-menu-mobile .linha-menu {
   display: block !important;
   visibility: visible !important;
   width: 100%;
@@ -78,7 +78,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
+  .botao-menu-mobile {
     display: flex !important;
   }
 
@@ -137,7 +137,6 @@ body {
   gap: 0.5rem;
 }
 
-/* NOME DA CLASSE ALTERADO DE .member-card PARA .item-do-membro */
 #members.list-view .item-do-membro {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr 2fr;
@@ -161,7 +160,7 @@ body {
 #members.list-view .item-do-membro a { margin: 0; }
 
 /* Container dos botões */
-.view-options {
+.opcoes-visualizacao {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -170,8 +169,8 @@ body {
   margin: 1rem 0;
 }
 
-/* Botões */
-.toggle-btn {
+/* Botões de alternância */
+.botao-alternar {
   background: var(--primary);
   border: none;
   padding: 0.75rem;
@@ -181,11 +180,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-.toggle-btn:hover,
-.toggle-btn.active { background: var(--accent); }
+.botao-alternar:hover,
+.botao-alternar.active { background: var(--accent); }
 
 /* Ícones */
-.icon-grid {
+.icone-grade {
   width: 20px;
   height: 20px;
   display: grid;
@@ -193,22 +192,22 @@ body {
   grid-template-rows: repeat(2, 1fr);
   gap: 4px;
 }
-.icon-grid div {
+.icone-grade div {
   width: 6px;
   height: 6px;
   background: #fff;
   border-radius: 50%;
 }
-.icon-list {
+.icone-lista {
   width: 20px;
   height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.icon-list::before,
-.icon-list::after,
-.icon-list div {
+.icone-lista::before,
+.icone-lista::after,
+.icone-lista div {
   content: "";
   display: block;
   height: 4px;
@@ -216,7 +215,6 @@ body {
   border-radius: 2px;
 }
 
-/* Bloco alterado de .member-card para .item-do-membro */
 .item-do-membro {
   border: 1px solid #ccc;
   padding: 1rem;
@@ -253,14 +251,14 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-.footer-left { text-align: left; }
-.footer-right { text-align: right; }
-.footer-social {
+.rodape-esquerda { text-align: left; }
+.rodape-direita { text-align: right; }
+.rodape-social {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
-.footer-social a {
+.rodape-social a {
   color: #fff;
   font-size: 1.5rem;
   text-decoration: none;
@@ -273,7 +271,7 @@ footer {
   gap: 1rem;
   margin: 2rem 0;
 }
-.info-box {
+.caixa-info {
   background: var(--secondary);
   padding: 1rem;
   border-radius: var(--radius);
@@ -282,7 +280,7 @@ footer {
 @media (max-width: 768px) {
   .inicio { grid-template-columns: 1fr; }
 }
-.hero {
+.destaque {
   background: url("../imagens/Livramento.png") center/cover no-repeat;
   min-height: 400px;
   display: flex;
@@ -291,14 +289,14 @@ footer {
   padding: 2rem;
   color: #fff;
 }
-.hero-content {
+.destaque-conteudo {
   background: rgba(0,0,0,0.5);
   padding: 2rem;
   border-radius: var(--radius);
   max-width: 400px;
   text-align: left;
 }
-.hero button {
+.destaque button {
   background: var(--accent);
   color: #fff;
   border: none;
@@ -307,7 +305,7 @@ footer {
   border-radius: var(--radius);
   cursor: pointer;
 }
-.hero button:hover { background: #e68900; }
+.destaque button:hover { background: #e68900; }
 
 /* --- PÁGINA ASSOCIAÇÃO --- */
 .associacao-container {
@@ -321,11 +319,11 @@ footer {
 
 @media (max-width: 880px) {
   .associacao-container { grid-template-columns: 1fr; }
-  .form-column { order: 1; }
+  .coluna-formulario { order: 1; }
   .coluna-cartoes { order: 2; margin-top: 1rem; }
 }
 
-.form-column {
+.coluna-formulario {
   background: var(--panel);
   padding: 1.5rem;
   border-radius: var(--radius);
@@ -365,9 +363,9 @@ footer {
   background: #fff;
 }
 .form-associacao textarea { min-height: 100px; resize: vertical; }
-.form-actions { margin-top: 1rem; }
+.acoes-formulario { margin-top: 1rem; }
 
-.btn-submit {
+.botao-enviar {
   display: inline-block !important;
   visibility: visible !important;
   width: auto !important;
@@ -382,11 +380,11 @@ footer {
   transition: background 0.2s;
 }
 
-.btn-submit:hover {
+.botao-enviar:hover {
   background-color: #e68900 !important;
 }
 
-/* --- CLASSIFICAÇÃO LATERAL MODIFICADA PARA FUGIR DO BOOTSTRAP --- */
+/* --- COLUNA LATERAL DE NÍVEIS --- */
 .lista-cartoes {
   list-style: none;
   padding: 0;
@@ -396,7 +394,6 @@ footer {
   gap: 1rem;
 }
 
-/* Substituído .card por .cartao */
 .cartao {
   background: #ffffff;
   border: 1px solid #e0e0e0;
@@ -404,27 +401,23 @@ footer {
   padding: 1.25rem;
 }
 
-/* Substituído .card-title por .cartao-titulo */
 .cartao-titulo {
   margin: 0 0 0.25rem 0;
   color: var(--primary);
 }
 
-/* Substituído .card-sub por .cartao-subtitulo */
 .cartao-subtitulo {
   margin: 0 0 0.75rem 0;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* Substituído .card-body por .cartao-corpo */
 .cartao-corpo {
   padding: 0.5rem 0;
   color: var(--text);
   font-size: 0.9rem;
 }
 
-/* Substituído .card-link por .cartao-link */
 .cartao-link {
   display: inline-block;
   background-color: #f5f5f5;
@@ -441,7 +434,6 @@ footer {
   background-color: #e0e0e0;
 }
 
-/* Substituído .btn-primary por .botao-primario */
 .botao-primario {
   display: inline-block;
   background-color: var(--primary);
@@ -470,7 +462,7 @@ dialog.modal {
   padding: 2rem;
   background: #fff;
 }
-.close-modal {
+.botao-fechar-modal {
   background: #ccc;
   border: none;
   padding: 0.5rem 1rem;
