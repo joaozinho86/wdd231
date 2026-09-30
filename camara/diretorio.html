@@ -16,51 +16,56 @@
   <meta property="og:url" content="https://joaozinho86.github.io/wdd231/camara/diretorio.html">
   <meta property="og:type" content="website">
 
-
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <header class="site-header">
-  <div class="logo-area">
-    <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio">
-    <h1>Câmara de Comércio<br><span>Santana do Livramento</span></h1>
-  </div>
+    <div class="logo-area">
+      <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio">
+      <h1>Câmara de Comércio<br><span>Santana do Livramento</span></h1>
+    </div>
 
-  <button class="hamburger" id="hamburger">&#9776;</button>
+    <!-- CORREÇÃO: Botão hambúrguer usando as classes corretas do CSS -->
+    <button id="hamburgerBtn" class="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+    </button>
 
-  <nav id="navMenu">
-    <ul class="menu">
-      <li><a href="index.html" class="active">Início</a></li>
-      <li><a href="diretorio.html">Diretório</a></li>
-      <li><a href="associacao.html">Associar-se</a></li>
-      <li><a href="eventos.html">Eventos</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav id="navMenu" class="main-nav" aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="diretorio.html" class="active">Diretório</a></li>
+        <li><a href="associacao.html">Associar-se</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <h2>Diretório de Membros</h2>
-    <div class="view-options">
-      <button id="gridBtn" class="toggle-btn active" aria-label="Grade">
-    <span class="icon-grid">
-      <div></div><div></div>
-      <div></div><div></div>
-      <div></div><div></div>
-    </span>
+    
+    <!-- CORREÇÃO: Classes e estrutura dos ícones exatamente como o CSS espera -->
+    <div class="opcoes-visualizacao">
+      <button id="gridBtn" class="botao-alternar active" aria-label="Grade">
+        <span class="icone-grade">
+          <div></div><div></div>
+          <div></div><div></div>
+        </span>
       </button>
-      <button id="listBtn" class="toggle-btn" aria-label="Lista">
-    <span class="icon">☰</span>
+      <button id="listBtn" class="botao-alternar" aria-label="Lista">
+        <span class="icone-lista">
+          <div></div>
+        </span>
       </button>
     </div>
-
 
     <section id="members" class="grid-view"></section>
   </main>
