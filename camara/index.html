@@ -16,7 +16,6 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="estilos/normalize.css">
@@ -33,9 +32,14 @@
       <h1>Câmara de Comércio<br><span>Santana do Livramento</span></h1>
     </div>
 
-    <button class="hamburger" id="hamburger">&#9776;</button>
+    <!-- CORREÇÃO 1: Botão Hamburger usando as classes exatas do CSS -->
+    <button id="hamburgerBtn" class="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+    </button>
 
-    <nav id="navMenu">
+    <nav id="navMenu" class="main-nav" aria-label="Menu principal">
       <ul class="menu">
         <li><a href="index.html" class="active">Início</a></li>
         <li><a href="diretorio.html">Diretório</a></li>
@@ -47,13 +51,14 @@
     </nav>
   </header>
 
-  <section class="hero">
-  <div class="hero-content">
-    <h2>Bem-vindo à Câmara de Comércio</h2>
-    <p>Conectando empresas e oportunidades em Santana do Livramento</p>
-    <button>Ingressos Palestra</button>
-  </div>
-</section>
+  <!-- CORREÇÃO 2: Usando as classes "destaque" e "destaque-conteudo" para a imagem de fundo -->
+  <section class="destaque">
+    <div class="destaque-conteudo">
+      <h2>Bem-vindo à Câmara de Comércio</h2>
+      <p>Conectando empresas e oportunidades em Santana do Livramento</p>
+      <button>Ingressos Palestra</button>
+    </div>
+  </section>
 
   <main>
 
@@ -64,90 +69,90 @@
 
     <section class="inicio">
       <div class="info-box">
-    <h3>Eventos</h3>
-    <ul id="eventos"></ul>
-  </div>
+        <h3>Eventos</h3>
+        <ul id="eventos"></ul>
+      </div>
 
       <div class="info-box">
-    <h3>Clima</h3>
-    <div id="clima"></div>
-  </div>
+        <h3>Clima</h3>
+        <div id="clima"></div>
+      </div>
 
       <div class="info-box">
-    <h3>Previsão de Clima</h3>
-    <div id="previsao"></div>
-  </div>
+        <h3>Previsão de Clima</h3>
+        <div id="previsao"></div>
+      </div>
     </section>
 
-
     <!-- Seção Empresas em Destaque -->
-<section class="empresas-destaque">
-  <h2>Empresas em Destaque</h2>
-  
-  <!-- A classe "grid-view" ativa o layout de cards lado a lado no CSS existente -->
-  <div id="members" class="grid-view">
-    
-    <!-- Card 1: Coisa Nossa Churrascaria -->
-    <div class="item-do-membro">
-      <img src="imagens/coisanossa.webp" alt="Logo Coisa Nossa Churrascaria" width="100" height="100">
-      <h3>Coisa Nossa Churrascaria</h3>
-      <p>Buffet e Espeto Corrido</p>
-      <p>Av. Taman... - Santana do Livramento</p>
-      <p>Telefone: (55) 3621-3435</p>
-      <a href="#">Site</a>
-      <p><strong>Nível de associação:</strong> Ouro</p>
-    </div>
+    <section class="empresas-destaque">
+      <h2>Empresas em Destaque</h2>
+      
+      <!-- A classe grid-view faz os cards ficarem lado a lado -->
+      <div id="members" class="grid-view">
+        
+        <!-- Card 1: Coisa Nossa Churrascaria -->
+        <div class="item-do-membro">
+          <img src="imagens/coisanossa.webp" alt="Logo Coisa Nossa Churrascaria" width="100" height="100">
+          <h3>Coisa Nossa Churrascaria</h3>
+          <p>Buffet e Espeto Corrido</p>
+          <p>Av. Taman... - Santana do Livramento</p>
+          <p>Telefone: (55) 3621-3435</p>
+          <a href="#">Site</a>
+          <p><strong>Nível de associação:</strong> Ouro</p>
+        </div>
 
-    <!-- Card 2: il Gatto Pizzaria -->
-    <div class="item-do-membro">
-      <img src="imagens/ilgato.webp" alt="Logo il Gatto Pizzaria" width="100" height="100">
-      <h3>il Gatto Pizzaria</h3>
-      <p>Pizzaria</p>
-      <p>Endereço aqui</p>
-      <p>Telefone: (55) 0000-0000</p>
-      <a href="#">Site</a>
-      <p><strong>Nível de associação:</strong> Prata</p>
-    </div>
+        <!-- Card 2: il Gatto Pizzaria -->
+        <div class="item-do-membro">
+          <img src="imagens/ilgato.webp" alt="Logo il Gatto Pizzaria" width="100" height="100">
+          <h3>il Gatto Pizzaria</h3>
+          <p>Pizzaria</p>
+          <p>Endereço aqui</p>
+          <p>Telefone: (55) 0000-0000</p>
+          <a href="#">Site</a>
+          <p><strong>Nível de associação:</strong> Prata</p>
+        </div>
 
-    <!-- Card 3: Supermercados Nicolini -->
-    <div class="item-do-membro">
-      <img src="imagens/nicolini.webp" alt="Logo Supermercados Nicolini" width="100" height="100">
-      <h3>Supermercados Nicolini</h3>
-      <p>Supermercado</p>
-      <p>Av. Taman... - Santana do Livramento</p>
-      <p>Telefone: (55) 3965-0052</p>
-      <a href="#">Site</a>
-      <p><strong>Nível de associação:</strong> Ouro</p>
-    </div>
+        <!-- Card 3: Supermercados Nicolini -->
+        <div class="item-do-membro">
+          <img src="imagens/nicolini.webp" alt="Logo Supermercados Nicolini" width="100" height="100">
+          <h3>Supermercados Nicolini</h3>
+          <p>Supermercado</p>
+          <p>Av. Taman... - Santana do Livramento</p>
+          <p>Telefone: (55) 3965-0052</p>
+          <a href="#">Site</a>
+          <p><strong>Nível de associação:</strong> Ouro</p>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
   </main>
 
   <footer>
-  <div class="footer-left">
-    <p>© <span id="year"></span> Câmara de Comércio de Santana do Livramento</p>
-    <p>Rua Salgado Filho, 146</p>
-    <p>Santana do Livramento, RS</p>
-  </div>
+    <!-- CORREÇÃO 3: Usando as classes "rodape-esquerda", "rodape-social" e "rodape-direita" -->
+    <div class="rodape-esquerda">
+      <p>© <span id="year"></span> Câmara de Comércio de Santana do Livramento</p>
+      <p>Rua Salgado Filho, 146</p>
+      <p>Santana do Livramento, RS</p>
+    </div>
 
-  <div class="footer-social">
-    <a href="https://youtube.com" target="_blank">
-      <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
-    </a>
-    <a href="https://x.com" target="_blank">
-      <img src="imagens/twitter.png" alt="X" width="32" height="32">
-    </a>
-    <a href="https://linkedin.com" target="_blank">
-      <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
-    </a>
-  </div>
+    <div class="rodape-social">
+      <a href="https://youtube.com" target="_blank">
+        <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
+      </a>
+      <a href="https://x.com" target="_blank">
+        <img src="imagens/twitter.png" alt="X" width="32" height="32">
+      </a>
+      <a href="https://linkedin.com" target="_blank">
+        <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
+      </a>
+    </div>
 
-  <div class="footer-right">
-    <p>santanadolivramento@camaracomercio.com.br</p>
-    <p>Projeto de Aula WDD231 – João Correa</p>
-    <p>Última modificação: <span id="lastModified"></span></p>
-  </div>
+    <div class="rodape-direita">
+      <p>santanadolivramento@camaracomercio.com.br</p>
+      <p>Projeto de Aula WDD231 – João Correa</p>
+      <p>Última modificação: <span id="lastModified"></span></p>
+    </div>
   </footer>
 
 </body>

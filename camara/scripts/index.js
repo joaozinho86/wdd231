@@ -45,32 +45,52 @@ loadWeather();
 
 
 async function loadEmpresas() {
-  const response = await fetch("dados/membros.json");
-  const data = await response.json();
+  try {
+    const response = await fetch("dados/membros.json");
+    const data = await response.json();
 
-  const destaque = data.filter(m => m.membership === "Ouro" || m.membership === "Prata");
-  const selecionados = destaque.sort(() => 0.5 - Math.random()).slice(0,3);
+    const destaque = data.filter(m => m.membership === "Ouro" || m.membership === "Prata");
+    const selecionados = destaque.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-  const container = document.getElementById("empresas");
-  selecionados.forEach(member => {
-    const card = document.createElement("div");
-    card.classList.add("member-card");
-    card.innerHTML = `
-      <img src="${member.image}" alt="${member.name}">
-      <h3>${member.name}</h3>
-      <p>${member.address}</p>
-      <p>Telefone: ${member.phone}</p>
-      <a href="${member.website}" target="_blank">Visite o site</a>
-      <p>Nível de associação: ${member.membership}</p>
-    `;
-    container.appendChild(card);
-  });
+    // CORREÇÃO PRINCIPAL: O HTML usa id="members" para a seção de Empresas em Destaque
+    const container = document.getElementById("members");
+    
+    if (container) {
+      // Limpa o container antes de adicionar os cards para evitar duplicação
+      container.innerHTML = ""; 
+      
+      selecionados.forEach(member => {
+        const card = document.createElement("div");
+        
+        // CORREÇÃO: Usando a classe "item-do-membro" que o seu CSS reconhece
+        card.classList.add("item-do-membro"); 
+        
+        card.innerHTML = `
+          <img src="${member.image}" alt="${member.name}">
+          <h3>${member.name}</h3>
+          <p>${member.address}</p>
+          <p>Telefone: ${member.phone}</p>
+          <a href="${member.website}" target="_blank">Visite o site</a>
+          <p>Nível de associação: ${member.membership}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+  } catch (error) {
+    console.error("Erro ao carregar as empresas em destaque:", error);
+  }
 }
 loadEmpresas();
 
-const hamburger = document.getElementById("hamburger");
+// CORREÇÃO: O ID do botão no HTML foi alterado para "hamburgerBtn" para bater com o CSS
+const hamburger = document.getElementById("hamburgerBtn");
 const navMenu = document.getElementById("navMenu");
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-});
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    // Acessibilidade: atualiza aria-expanded
+    const expanded = navMenu.classList.contains("show");
+    hamburger.setAttribute("aria-expanded", expanded);
+  });
+}
