@@ -43,17 +43,17 @@
   <script src="scripts/associacao.js" defer></script>
 </head>
 <body>
-  <!-- Cabeçalho / navegação -->
+    <!-- Cabeçalho / navegação -->
   <header class="site-header">
     <div class="logo-area">
       <a class="logo" href="index.html"><img src="imagens/camaracomercio.webp" alt="Logo"></a>
     </div>
 
-    <!-- Botão hamburger visível apenas em mobile -->
-    <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
+    <!-- CORREÇÃO: Usando as classes "botao-menu-mobile" e "linha-menu" que o seu CSS espera -->
+    <button id="hamburgerBtn" class="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
     </button>
 
     <nav id="navMenu" class="main-nav" aria-label="Menu principal">
