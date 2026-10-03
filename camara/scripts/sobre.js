@@ -1,5 +1,5 @@
 // scripts/sobre.js
-import interesses from '../data/interesses.mjs';
+import interesses from '../dados/interesses.mjs';
 
 // ==================== 1. Mensagem de última visita ====================
 const CHAVE_VISITA = 'ultimaVisitaSobre';
