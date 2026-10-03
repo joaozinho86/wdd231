@@ -470,3 +470,166 @@ dialog.modal {
   margin-top: 1rem;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   Página Sobre — galeria de interesses com áreas de grade nomeadas
+   ========================================================================== */
+
+main > h2 {
+  padding: 0 1rem;
+}
+
+.subtitulo-sobre {
+  padding: 0 1rem;
+  color: var(--muted, #666);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mensagem-visita {
+  background: var(--secondary, #f9f9f9);
+  border-left: 4px solid var(--accent, #ff9800);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius, 6px);
+  margin: 0 1rem 1.5rem 1rem;
+  font-weight: 500;
+  color: var(--primary, #004d40);
+}
+
+.galeria-interesses {
+  display: grid;
+  gap: 1.25rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+/* Telas pequenas (320px – 640px) */
+@media (max-width: 640px) {
+  .galeria-interesses {
+    grid-template-areas:
+      "c1" "c2" "c3" "c4" "c5" "c6" "c7" "c8";
+  }
+}
+
+/* Telas médias (641px – 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .galeria-interesses {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c2" "c3 c4" "c5 c6" "c7 c8";
+  }
+}
+
+/* Telas grandes (1025px e acima) */
+@media (min-width: 1025px) {
+  .galeria-interesses {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "c1 c2 c3" "c4 c5 c6" "c7 c8 .";
+  }
+}
+
+.cartao-interesse:nth-child(1) { grid-area: c1; }
+.cartao-interesse:nth-child(2) { grid-area: c2; }
+.cartao-interesse:nth-child(3) { grid-area: c3; }
+.cartao-interesse:nth-child(4) { grid-area: c4; }
+.cartao-interesse:nth-child(5) { grid-area: c5; }
+.cartao-interesse:nth-child(6) { grid-area: c6; }
+.cartao-interesse:nth-child(7) { grid-area: c7; }
+.cartao-interesse:nth-child(8) { grid-area: c8; }
+
+.cartao-interesse {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius, 6px);
+  box-shadow: var(--shadow, 0 2px 4px rgba(0,0,0,.1));
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.cartao-interesse:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-interesse h2 {
+  font-size: 1.15rem;
+  color: var(--primary, #004d40);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.cartao-interesse figure {
+  margin: 0 0 0.75rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cartao-interesse figure img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 300 / 200;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: #f5f5f5;
+}
+
+.cartao-interesse address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--muted, #666);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.cartao-interesse p {
+  font-size: 0.95rem;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.botao-saiba-mais {
+  background: var(--primary, #004d40);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius, 6px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.botao-saiba-mais:hover,
+.botao-saiba-mais:focus {
+  background: var(--accent, #ff9800);
+}
+
+/* Efeito de hover: SOMENTE em telas maiores que 640px */
+@media (min-width: 641px) {
+  .cartao-interesse figure img {
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cartao-interesse figure img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.08) contrast(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+}
+
+#modalInteresse .modal-inner {
+  max-width: 520px;
+}
+#modalInteresse h2 {
+  color: var(--primary, #004d40);
+  margin-top: 0;
+}
+#modalInteresse p {
+  line-height: 1.5;
+}

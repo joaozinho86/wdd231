@@ -1,0 +1,95 @@
+// scripts/sobre.js
+
+// DEBUG: Verificar se o script foi carregado
+console.log("Script sobre.js carregado com sucesso.");
+
+import interesses from '../data/interesses.mjs';
+
+// DEBUG: Verificar se os dados foram importados
+console.log("Dados importados:", interesses);
+
+// ==================== 1. Mensagem de última visita ====================
+const CHAVE_VISITA = 'ultimaVisitaSobre';
+const msgEl = document.getElementById('mensagem-visita');
+const agora = Date.now();
+const ultimaVisita = localStorage.getItem(CHAVE_VISITA);
+
+if (!ultimaVisita) {
+  msgEl.textContent = 'Boas-vindas! Entre em contato conosco caso tenha alguma dúvida.';
+} else {
+  const diffMs = agora - Number(ultimaVisita);
+  const diffDias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+  if (diffDias < 1) {
+    msgEl.textContent = 'Já voltou? Que legal!';
+  } else {
+    const palavra = diffDias === 1 ? 'dia' : 'dias';
+    msgEl.textContent = `Seu último acesso foi há ${diffDias} ${palavra}.`;
+  }
+}
+localStorage.setItem(CHAVE_VISITA, agora);
+
+// ==================== 2. Criar os cartões ====================
+const galeria = document.getElementById('galeria-interesses');
+
+if (galeria && interesses) {
+  interesses.forEach((item, index) => {
+    const artigo = document.createElement('article');
+    artigo.className = 'cartao-interesse';
+
+    // Título
+    const h2 = document.createElement('h2');
+    h2.textContent = item.titulo;
+    artigo.appendChild(h2);
+
+    // Figura / imagem
+    const figure = document.createElement('figure');
+    const img = document.createElement('img');
+    img.src = item.imagem;
+    img.alt = `Foto de ${item.titulo}`;
+    img.width = 300;
+    img.height = 200;
+    if (index > 0) {
+      img.loading = 'lazy';
+    }
+    figure.appendChild(img);
+    artigo.appendChild(figure);
+
+    // Endereço
+    const address = document.createElement('address');
+    address.textContent = item.endereco;
+    artigo.appendChild(address);
+
+    // Descrição
+    const p = document.createElement('p');
+    p.textContent = item.descricao;
+    artigo.appendChild(p);
+
+    // Botão "Saiba mais"
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'botao-saiba-mais';
+    botao.textContent = 'Saiba mais';
+    botao.addEventListener('click', () => {
+      const modal = document.getElementById('modalInteresse');
+      document.getElementById('modalTitulo').textContent = item.titulo;
+      document.getElementById('modalTexto').textContent =
+        `${item.descricao} — ${item.endereco} — Telefone: ${item.telefone}`;
+      modal.showModal();
+    });
+    artigo.appendChild(botao);
+
+    galeria.appendChild(artigo);
+  });
+} else {
+  console.error("Erro: Elemento #galeria-interesses não encontrado ou dados inválidos.");
+}
+
+// ==================== 3. Fechar modal ====================
+const modal = document.getElementById('modalInteresse');
+if (modal) {
+  document.getElementById('fecharModal').addEventListener('click', () => modal.close());
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
+}

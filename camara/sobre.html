@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sobre - Câmara de Comércio de Santana do Livramento</title>
+  <meta name="description" content="Conheça os oito pontos de interesse da nossa cidade.">
+  <meta name="author" content="João Correa - WDD 231">
+
+  <link rel="icon" type="image/png" href="imagens/favicon.ico">
+
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="stylesheet" href="estilos/midia.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Script com type="module" -->
+  <script type="module" src="scripts/sobre.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="imagens/camaracomercio.webp" alt="Logo Câmara de Comércio">
+      <h1>Câmara de Comércio<br><span>Santana do Livramento</span></h1>
+    </div>
+
+    <button id="hamburgerBtn" class="botao-menu-mobile" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+      <span class="linha-menu"></span>
+    </button>
+
+    <nav id="navMenu" class="main-nav" aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="diretorio.html">Diretório</a></li>
+        <li><a href="associacao.html">Associar-se</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="sobre.html" class="active" aria-current="page">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Sobre a nossa cidade</h2>
+    <p class="subtitulo-sobre">
+      Selecionamos oito pontos de interesse da nossa região. Passe o mouse sobre as fotos para conhecê-los melhor.
+    </p>
+
+    <!-- Mensagem personalizada -->
+    <p class="mensagem-visita" id="mensagem-visita" role="status" aria-live="polite"></p>
+
+    <!-- Os 8 cartões serão inseridos aqui pelo JavaScript -->
+    <section id="galeria-interesses" class="galeria-interesses" aria-label="Pontos de interesse da cidade"></section>
+  </main>
+
+  <footer>
+    <div class="rodape-esquerda">
+      <p>© <span id="year"></span> Câmara de Comércio de Santana do Livramento</p>
+      <p>Rua Salgado Filho, 146</p>
+      <p>Santana do Livramento, RS</p>
+    </div>
+
+    <div class="rodape-social">
+      <a href="https://youtube.com" target="_blank" rel="noopener">
+        <img src="imagens/youtube.png" alt="YouTube" width="32" height="32">
+      </a>
+      <a href="https://x.com" target="_blank" rel="noopener">
+        <img src="imagens/twitter.png" alt="X" width="32" height="32">
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">
+        <img src="imagens/linkedin.png" alt="LinkedIn" width="32" height="32">
+      </a>
+    </div>
+
+    <div class="rodape-direita">
+      <p>santanadolivramento@camaracomercio.com.br</p>
+      <p>Projeto de Aula WDD231 – João Correa</p>
+      <p>Última modificação: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <dialog id="modalInteresse" class="modal" aria-labelledby="modalTitulo">
+    <div class="modal-inner">
+      <h2 id="modalTitulo"></h2>
+      <p id="modalTexto"></p>
+      <button type="button" class="botao-fechar-modal" id="fecharModal">Fechar</button>
+    </div>
+  </dialog>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+  </script>
+</body>
+</html>
