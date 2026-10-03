@@ -633,3 +633,53 @@ main > h2 {
 #modalInteresse p {
   line-height: 1.5;
 }
+
+/* ==========================================================================
+   Correção de contraste — modal, botão fechar e hover do "Saiba mais"
+   ========================================================================== */
+
+/* Garante que o dialog e seu conteúdo tenham cores legíveis em qualquer tema */
+dialog.modal {
+  background: #ffffff;
+  color: var(--text, #333);
+}
+
+dialog.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-inner {
+  background: #ffffff;
+  color: var(--text, #333);
+}
+
+#modalInteresse h2 {
+  color: var(--primary, #004d40);
+}
+
+#modalInteresse p {
+  color: var(--text, #333);
+}
+
+/* Botão de fechar: fundo cinza claro, texto preto (contraste ~15:1) */
+.botao-fechar-modal {
+  background: #cccccc;
+  color: #000000;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.botao-fechar-modal:hover,
+.botao-fechar-modal:focus {
+  background: #b3b3b3;
+}
+
+/* Hover do botão "Saiba mais": texto preto sobre laranja (contraste ~7:1) */
+.botao-saiba-mais:hover,
+.botao-saiba-mais:focus {
+  background: var(--accent, #ff9800);
+  color: #000000;
+}
