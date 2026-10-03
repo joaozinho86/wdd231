@@ -1,12 +1,5 @@
 // scripts/sobre.js
-
-// DEBUG: Verificar se o script foi carregado
-console.log("Script sobre.js carregado com sucesso.");
-
 import interesses from '../data/interesses.mjs';
-
-// DEBUG: Verificar se os dados foram importados
-console.log("Dados importados:", interesses);
 
 // ==================== 1. Mensagem de última visita ====================
 const CHAVE_VISITA = 'ultimaVisitaSobre';
@@ -92,4 +85,15 @@ if (modal) {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.close();
   });
+}
+
+// ==================== 4. Ano atual e última modificação ====================
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+const lastModEl = document.getElementById('lastModified');
+if (lastModEl) {
+  lastModEl.textContent = document.lastModified;
 }
