@@ -281,7 +281,7 @@ footer {
   .inicio { grid-template-columns: 1fr; }
 }
 .destaque {
-  background: url("../imagens/Livramento.png") center/cover no-repeat;
+  background: url("../imagens/Livramento.webp") center/cover no-repeat;
   min-height: 400px;
   display: flex;
   justify-content: flex-end;
@@ -472,133 +472,110 @@ dialog.modal {
 }
 
 /* ==========================================================================
-   Página Sobre — Layout conforme imagem (cartões horizontais)
+   Página Sobre — Galeria de interesses
+   Todas as regras são escopadas em .cartao-interesse ou #modalInteresse
+   para não conflitar com as regras existentes do diretório/modal.
    ========================================================================== */
-
-main > h2 {
-  padding: 0 1rem;
-}
 
 .subtitulo-sobre {
   padding: 0 1rem;
-  color: var(--muted, #666);
+  color: #666;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .mensagem-visita {
-  background: var(--secondary, #f9f9f9);
-  border-left: 4px solid var(--accent, #ff9800);
+  background: #f9f9f9;
+  border-left: 4px solid #ff9800;
   padding: 0.75rem 1rem;
-  border-radius: var(--radius, 6px);
+  border-radius: 6px;
   margin: 0 1rem 1.5rem 1rem;
   font-weight: 500;
-  color: var(--primary, #004d40);
+  color: #004d40;
 }
 
-/* ==========================================================================
-   Galeria — Áreas de Grade Nomeadas
-   ========================================================================== */
+/* ---- Galeria: áreas de grade nomeadas ---- */
 .galeria-interesses {
   display: grid;
   gap: 1.5rem;
   padding: 0 1rem 2rem 1rem;
 }
 
-/* --- TELAS PEQUENAS (320px – 640px) --- */
 @media (max-width: 640px) {
   .galeria-interesses {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "c1"
-      "c2"
-      "c3"
-      "c4"
-      "c5";
+    grid-template-areas: "c1" "c2" "c3" "c4" "c5";
   }
 }
 
-/* --- TELAS MÉDIAS (641px – 1024px) --- */
 @media (min-width: 641px) and (max-width: 1024px) {
   .galeria-interesses {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "c1 c2"
-      "c3 c4"
-      "c5 .";
+    grid-template-areas: "c1 c2" "c3 c4" "c5 .";
   }
 }
 
-/* --- TELAS GRANDES (1025px e acima) --- */
 @media (min-width: 1025px) {
   .galeria-interesses {
-    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas como na imagem */
-    grid-template-areas:
-      "c1 c2"
-      "c3 c4"
-      "c5 .";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "c1 c2" "c3 c4" "c5 .";
   }
 }
 
-/* Atribuição das áreas nomeadas */
 .cartao-interesse:nth-child(1) { grid-area: c1; }
 .cartao-interesse:nth-child(2) { grid-area: c2; }
 .cartao-interesse:nth-child(3) { grid-area: c3; }
 .cartao-interesse:nth-child(4) { grid-area: c4; }
 .cartao-interesse:nth-child(5) { grid-area: c5; }
 
-/* ==========================================================================
-   Estilo do Cartão (Layout Horizontal)
-   ========================================================================== */
+/* ---- Cartão da página Sobre (escopado em .cartao-interesse) ---- */
 .cartao-interesse {
   display: flex;
-  flex-direction: row; /* Imagem à esquerda, texto à direita */
-  background: #f4f4f4; /* Fundo cinza claro como na imagem */
+  flex-direction: row;
+  background: #f4f4f4;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Figura (Imagem) */
-.cartao-figura {
-  flex: 0 0 45%; /* Ocupa 45% da largura do cartão */
+.cartao-interesse .cartao-figura {
+  flex: 0 0 45%;
   margin: 0;
   display: flex;
 }
 
-.cartao-figura img {
+.cartao-interesse .cartao-figura img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+  object-fit: cover;
   display: block;
 }
 
-/* Corpo do Texto */
-.cartao-corpo {
+.cartao-interesse .cartao-corpo {
   flex: 1;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  text-align: left; /* Alinhamento à esquerda como na imagem */
+  text-align: left;
 }
 
-.cartao-titulo {
-  font-family: Georgia, 'Times New Roman', serif; /* Fonte serifada da imagem */
+.cartao-interesse .cartao-titulo {
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.4rem;
   color: #222;
   margin: 0 0 0.75rem 0;
   line-height: 1.2;
 }
 
-.cartao-descricao {
+.cartao-interesse .cartao-descricao {
   font-size: 0.95rem;
   color: #444;
   line-height: 1.5;
-  margin: 0 0 auto 0; /* Empurra o resto para baixo */
+  margin: 0 0 auto 0;
 }
 
-.cartao-endereco {
+.cartao-interesse .cartao-endereco {
   font-style: normal;
   font-size: 0.85rem;
   color: #555;
@@ -606,17 +583,16 @@ main > h2 {
   margin-bottom: 0.25rem;
 }
 
-.cartao-custo {
+.cartao-interesse .cartao-custo {
   font-size: 0.85rem;
   font-weight: bold;
-  color: var(--primary, #004d40);
+  color: #004d40;
   margin: 0;
 }
 
-/* Botão "Saiba mais" */
-.botao-saiba-mais {
+.cartao-interesse .botao-saiba-mais {
   align-self: flex-start;
-  background: var(--primary, #004d40);
+  background: #004d40;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -628,41 +604,29 @@ main > h2 {
   transition: background 0.2s;
 }
 
-.botao-saiba-mais:hover,
-.botao-saiba-mais:focus {
-  background: var(--accent, #ff9800);
+.cartao-interesse .botao-saiba-mais:hover,
+.cartao-interesse .botao-saiba-mais:focus {
+  background: #ff9800;
   color: #000;
 }
 
-/* ==========================================================================
-   Responsividade do Cartão (Mobile: empilha)
-   ========================================================================== */
 @media (max-width: 640px) {
-  .cartao-interesse {
-    flex-direction: column; /* Imagem em cima, texto embaixo */
-  }
-  .cartao-figura {
-    flex: 0 0 200px; /* Altura fixa para a imagem no mobile */
-  }
+  .cartao-interesse { flex-direction: column; }
+  .cartao-interesse .cartao-figura { flex: 0 0 200px; }
 }
 
-/* ==========================================================================
-   Efeito de Hover nas Imagens (Somente telas maiores)
-   ========================================================================== */
 @media (min-width: 641px) {
-  .cartao-figura img {
+  .cartao-interesse .cartao-figura img {
     transition: transform 0.4s ease, filter 0.4s ease;
   }
-  .cartao-figura img:hover {
+  .cartao-interesse .cartao-figura img:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
   }
 }
 
-/* ==========================================================================
-   Modal — Contraste garantido
-   ========================================================================== */
-dialog.modal {
+/* ---- Modal da página Sobre (escopado em #modalInteresse) ---- */
+#modalInteresse {
   background: #ffffff;
   color: #333;
   border: none;
@@ -671,22 +635,27 @@ dialog.modal {
   max-width: 90vw;
 }
 
-dialog.modal::backdrop {
+#modalInteresse::backdrop {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.modal-inner {
+#modalInteresse .modal-inner {
   padding: 2rem;
+  background: #ffffff;
+  color: #333;
   max-width: 500px;
 }
 
+#modalInteresse .modal-titulo,
 #modalInteresse h2 {
-  color: var(--primary, #004d40);
-  margin-top: 0;
-  font-family: Georgia, serif;
+  color: #004d40;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
 }
 
-.botao-fechar-modal {
+#modalInteresse #fecharModal {
   background: #ccc;
   color: #000;
   border: none;
@@ -696,6 +665,6 @@ dialog.modal::backdrop {
   border-radius: 4px;
 }
 
-.botao-fechar-modal:hover {
+#modalInteresse #fecharModal:hover {
   background: #b3b3b3;
 }

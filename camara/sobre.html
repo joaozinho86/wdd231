@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,17 +103,14 @@
     </div>
   </footer>
 
-  <dialog id="modalInteresse" class="modal" aria-labelledby="modalTitulo">
+    <dialog id="modalInteresse" class="modal" aria-labelledby="modalTitulo">
     <div class="modal-inner">
-      <h2 id="modalTitulo"></h2>
+      <p id="modalTitulo" class="modal-titulo"></p>
       <p id="modalTexto"></p>
       <button type="button" class="botao-fechar-modal" id="fecharModal">Fechar</button>
     </div>
   </dialog>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
-  </script>
+  <script type="module" src="scripts/sobre.js"></script>
 </body>
 </html>
