@@ -30,48 +30,54 @@ if (galeria && interesses) {
     const artigo = document.createElement('article');
     artigo.className = 'cartao-interesse';
 
-    // Título
-    const h2 = document.createElement('h2');
-    h2.textContent = item.titulo;
-    artigo.appendChild(h2);
-
-    // Figura / imagem
+    // ---- Figura (Imagem) ----
     const figure = document.createElement('figure');
+    figure.className = 'cartao-figura';
     const img = document.createElement('img');
-    img.src = item.imagem;
-    img.alt = `Foto de ${item.titulo}`;
-    img.width = 300;
-    img.height = 200;
-    if (index > 0) {
-      img.loading = 'lazy';
-    }
+    img.src = item.lin_foto;
+    img.alt = `Foto de ${item.nome}`;
+    if (index > 0) img.loading = 'lazy'; // Lazy loading a partir do 2º
     figure.appendChild(img);
     artigo.appendChild(figure);
 
-    // Endereço
+    // ---- Corpo (Texto) ----
+    const corpo = document.createElement('div');
+    corpo.className = 'cartao-corpo';
+
+    const h2 = document.createElement('h2');
+    h2.className = 'cartao-titulo';
+    h2.textContent = item.nome;
+    corpo.appendChild(h2);
+
+    const pDesc = document.createElement('p');
+    pDesc.className = 'cartao-descricao';
+    pDesc.textContent = item.descricao;
+    corpo.appendChild(pDesc);
+
     const address = document.createElement('address');
+    address.className = 'cartao-endereco';
     address.textContent = item.endereco;
-    artigo.appendChild(address);
+    corpo.appendChild(address);
 
-    // Descrição
-    const p = document.createElement('p');
-    p.textContent = item.descricao;
-    artigo.appendChild(p);
+    const pCusto = document.createElement('p');
+    pCusto.className = 'cartao-custo';
+    pCusto.textContent = `Custo: ${item.custo}`;
+    corpo.appendChild(pCusto);
 
-    // Botão "Saiba mais"
     const botao = document.createElement('button');
     botao.type = 'button';
     botao.className = 'botao-saiba-mais';
     botao.textContent = 'Saiba mais';
     botao.addEventListener('click', () => {
       const modal = document.getElementById('modalInteresse');
-      document.getElementById('modalTitulo').textContent = item.titulo;
+      document.getElementById('modalTitulo').textContent = item.nome;
       document.getElementById('modalTexto').textContent =
-        `${item.descricao} — ${item.endereco} — Telefone: ${item.telefone}`;
+        `${item.descricao} — ${item.endereco} — Custo: ${item.custo}`;
       modal.showModal();
     });
-    artigo.appendChild(botao);
+    corpo.appendChild(botao);
 
+    artigo.appendChild(corpo);
     galeria.appendChild(artigo);
   });
 } else {
@@ -87,13 +93,9 @@ if (modal) {
   });
 }
 
-// ==================== 4. Ano atual e última modificação ====================
+// ==================== 4. Ano e última modificação ====================
 const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const lastModEl = document.getElementById('lastModified');
-if (lastModEl) {
-  lastModEl.textContent = document.lastModified;
-}
+if (lastModEl) lastModEl.textContent = document.lastModified;

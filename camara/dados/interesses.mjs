@@ -1,60 +1,39 @@
 // data/interesses.mjs
 const interesses = [
   {
-    titulo: 'Coisa Nossa Churrascaria',
-    endereco: 'Av. Tamandaré, 1758 - Santana do Livramento',
-    telefone: '(55) 3621-3435',
-    descricao: 'Churrascaria tradicional com carnes nobres e buffet completo.',
-    imagem: 'imagens/coisanossa.webp'
+    nome: "Parque Internacional",
+    descricao: "Praça binacional única no mundo, localizada na fronteira entre Santana do Livramento (Brasil) e Rivera (Uruguai). É símbolo da 'Fronteira da Paz', onde moradores circulam livremente entre os dois países.",
+    endereco: "Av. João Pessoa, Centro – Santana do Livramento, RS",
+    custo: "Gratuito",
+    lin_foto: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Parque_Internacional_Livramento_Rivera.jpg"
   },
   {
-    titulo: 'Supermercados Nicolini',
-    endereco: 'Av. Tamandaré, 1569 - Santana do Livramento',
-    telefone: '(55) 3965-0052',
-    descricao: 'Rede de supermercados com variedade de produtos e atendimento de qualidade.',
-    imagem: 'imagens/nicolini.webp'
+    nome: "Trem do Pampa",
+    descricao: "Passeio turístico ferroviário de cerca de 20 km pela região da Campanha Gaúcha, mostrando paisagens típicas e história local.",
+    endereco: "R. Ten. Aníbal Benévolo, 279 – Divisa, Santana do Livramento, RS",
+    custo: "Em média R$ 50 por pessoa",
+    lin_foto: "https://www.viagensecaminhos.com/wp-content/uploads/2022/07/trem-do-pampa.jpg"
   },
   {
-    titulo: 'Sesc Santana do Livramento',
-    endereco: 'R. Brg. David Canabarro, 650 - Santana do Livramento',
-    telefone: '(55) 3642-0930',
-    descricao: 'Espaço de cultura, esporte e lazer para toda a comunidade.',
-    imagem: 'imagens/sesclivramento.webp'
+    nome: "Lago do Batuva",
+    descricao: "Cartão-postal da cidade, ideal para caminhadas, piqueniques e contemplação da natureza. Possui áreas verdes e espaço para lazer.",
+    endereco: "Av. João Antônio, Bairro Batuva – Santana do Livramento, RS",
+    custo: "Gratuito",
+    lin_foto: "https://www.viagensecaminhos.com/wp-content/uploads/2022/07/lago-batuva.jpg"
   },
   {
-    titulo: 'Verde Plaza Hotel',
-    endereco: 'R. Manduca Rodrigues, 747 - Santana do Livramento',
-    telefone: '(55) 3242-9300',
-    descricao: 'Hotel com estrutura completa para lazer e negócios na fronteira.',
-    imagem: 'imagens/verdeplaza.webp'
+    nome: "Cerro de Palomas",
+    descricao: "Formação natural imponente, com cerca de 300 metros de altura, localizada às margens da BR-158. Oferece vista panorâmica da região.",
+    endereco: "BR-158, Km 21 – Santana do Livramento, RS",
+    custo: "Gratuito",
+    lin_foto: "https://www.viagensecaminhos.com/wp-content/uploads/2022/07/cerro-de-palomas.jpg"
   },
   {
-    titulo: 'El Gato Bar e Restaurante',
-    endereco: 'Av. Tamandaré, 2404 - Santana do Livramento',
-    telefone: '(55) 3242-2000',
-    descricao: 'Bar e restaurante com pratos típicos e ambiente aconchegante.',
-    imagem: 'imagens/ilgato.webp'
-  },
-  {
-    titulo: 'O Boticário',
-    endereco: 'R. dos Andradas, 484 - Santana do Livramento',
-    telefone: '(55) 3621-3647',
-    descricao: 'Perfumaria e cosméticos com as principais tendências do mercado.',
-    imagem: 'imagens/oboticario.webp'
-  },
-  {
-    titulo: 'Climvet - Clínica Médica Veterinária',
-    endereco: 'R. Pref. Hugolino Andrade, 1030 - Santana do Livramento',
-    telefone: '(55) 99947-9066',
-    descricao: 'Atendimento veterinário com profissionais especializados e carinho pelos animais.',
-    imagem: 'imagens/climvet.webp'
-  },
-  {
-    titulo: 'Senac Santana do Livramento',
-    endereco: 'R. Duque de Caxias, 385 - Santana do Livramento',
-    telefone: '(55) 3622-1800',
-    descricao: 'Instituição de ensino profissionalizante com cursos em diversas áreas.',
-    imagem: 'imagens/senac.webp'
+    nome: "Complexo Turístico Termal Amsterland",
+    descricao: "Parque aquático com piscinas termais, piscina de ondas, rio lento e spa. Estrutura moderna com opções de lazer e relaxamento.",
+    endereco: "Estrada Robledo Braz, 6260, Km 5 – Ferradura dos Vinhedos, Santana do Livramento, RS",
+    custo: "R$ 45 por pessoa",
+    lin_foto: "https://www.viagensecaminhos.com/wp-content/uploads/2022/07/amsterland.jpg"
   }
 ];
 
