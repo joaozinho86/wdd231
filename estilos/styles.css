@@ -13,6 +13,7 @@ body {
 }
 
 /* Navegação com Flexbox */
+/* Navegação com Flexbox */
 header {
   display: flex;
   justify-content: space-between;
@@ -20,6 +21,8 @@ header {
   background: #0000FF;
   padding: 1rem;
   color: #FFFFFF;
+  position: relative;
+  z-index: 1000;
 }
 
 nav ul {
@@ -66,14 +69,15 @@ nav a[aria-current="page"] {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     background: #0000FF;
     padding: 1rem;
-    z-index: 10;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   }
   
   nav ul.aberto {
-    display: flex;
+    display: flex !important;
   }
 }
 

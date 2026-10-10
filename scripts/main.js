@@ -1,15 +1,18 @@
-import { initMenu, initModal } from './modulos.js';
-import { carregarDados } from './dados.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  initMenu();
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav ul');
   
-  initModal(); 
-
-  carregarDados();
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
   
-  const agora = new Date().toLocaleString('pt-BR');
-  localStorage.setItem('ultimaVisita', agora);
-  console.log('Última visita registrada no localStorage:', agora);
+      nav.classList.toggle('aberto');
+      
+      const isOpen = nav.classList.contains('aberto');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      
+      console.log('Menu clicado! Estado:', isOpen);
+    });
+  } else {
+    console.error('Erro: Elemento hamburger ou nav não encontrado.');
+  }
 });
