@@ -1,0 +1,18 @@
+[
+  {"id": 1, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Aerogerador de última geração com pás de 73,7 m."},
+  {"id": 2, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Operando desde 2023."},
+  {"id": 3, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Localizado no setor norte do parque."},
+  {"id": 4, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Equipado com sistema de proteção contra raios."},
+  {"id": 5, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Monitoramento remoto 24h."},
+  {"id": 6, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Torre de aço com 105 m de altura."},
+  {"id": 7, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Pás produzidas no Brasil."},
+  {"id": 8, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Sistema de controle digital avançado."},
+  {"id": 9, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Inversor de frequência integrado."},
+  {"id": 10, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Gerador síncrono de ímã permanente."},
+  {"id": 11, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Frenagem aerodinâmica e mecânica."},
+  {"id": 12, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Sensor de vento ultrassônico."},
+  {"id": 13, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Certificação IEC 61400-1."},
+  {"id": 14, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Operação em baixa velocidade do vento."},
+  {"id": 15, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Integrado ao sistema de controle do parque."},
+  {"id": 16, "modelo": "Vestas V150-4.2 MW", "potencia": "4,2 MW", "altura": "105 m", "diametro": "150 m", "status": "Ativo", "detalhes": "Manutenção preventiva a cada 6 meses."}
+]

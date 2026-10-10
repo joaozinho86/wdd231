@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Complexo Eólico Cerro Chato</title>
+    <meta name="description" content="Entre em contato com o Complexo Eólico Cerro Chato para agendar visitas técnicas, parcerias ou imprensa.">
+    <meta name="author" content="João Correa">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contato | Complexo Eólico Cerro Chato">
+    <meta property="og:description" content="Fale conosco para visitas, parcerias e imprensa.">
+    <meta property="og:image" content="imagens/hero-aerogeradores.webp">
+    <meta property="og:type" content="website">
+    <!-- Favicon e CSS -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <div class="logo">
+            <img src="imagens/cerrochato.webp" alt="Logotipo Complexo Eólico Cerro Chato" width="120" height="60">
+            <span>Cerro Chato</span>
+        </div>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="dados.html">Dados</a></li>
+                <li><a href="contato.html" class="active" aria-current="page">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="contato-container">
+            <!-- Coluna da Esquerda: Imagem -->
+            <div class="imagem-coluna">
+                <!-- ATENÇÃO: Você precisará salvar uma imagem vertical de uma torre eólica com este nome na pasta 'imagens' -->
+                <img src="imagens/cerrochatotorre.webp" alt="Torre de aerogerador do Complexo Eólico Cerro Chato" loading="lazy">
+            </div>
+
+            <!-- Coluna da Direita: Formulário -->
+            <div class="formulario-coluna">
+                <h1>Entre em Contato</h1>
+                <p>Estamos à disposição para visitas técnicas, imprensa e parcerias.</p>
+                
+                <form action="confirmacao.html" method="get">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                    
+                    <label for="empresa">Empresa/Instituição:</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+                    
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione...</option>
+                        <option value="visita">Visita técnica</option>
+                        <option value="imprensa">Imprensa</option>
+                        <option value="parceria">Parceria</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required rows="4" placeholder="Escreva sua mensagem..."></textarea>
+                    
+                    <button type="submit" class="btn-primario">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Complexo Eólico Cerro Chato. Todos os direitos reservados.</p>
+        <p>Desenvolvido por João Correa | <a href="contato.html">Contato</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
