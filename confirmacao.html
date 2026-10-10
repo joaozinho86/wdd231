@@ -1,19 +1,92 @@
-<title>Confirmação | Complexo Eólico Cerro Chato</title>
-<meta name="description" content="Confirmação de envio de mensagem para o Complexo Eólico Cerro Chato.">
-<meta name="author" content="João [Sobrenome]">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação | Complexo Eólico Cerro Chato</title>
+    <meta name="description" content="Confirmação de envio de mensagem para o Complexo Eólico Cerro Chato.">
+    <meta name="author" content="João Correa">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Confirmação | Complexo Eólico Cerro Chato">
+    <meta property="og:description" content="Mensagem enviada com sucesso.">
+    <meta property="og:url" content="https://joaozinho86.github.io/wdd231/final/confirmacao.html">
+    <meta property="og:image" content="https://joaozinho86.github.io/wdd231/final/imagens/hero-aerogeradores.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon e CSS -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <div class="logo">
+            <img src="imagens/cerrochato.webp" alt="Logotipo Complexo Eólico Cerro Chato" width="120" height="60">
+            <span>Cerro Chato</span>
+        </div>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="dados.html">Dados</a></li>
+                <!-- Marcamos 'Contato' como ativo, pois esta é a página de ação do formulário de contato -->
+                <li><a href="contato.html" class="active" aria-current="page">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-  <h1>Mensagem Enviada com Sucesso!</h1>
-  <div id="dados-formulario"></div>
-</main>
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="hero">
+            <h1>Mensagem Enviada com Sucesso!</h1>
+            <p>Agradecemos o seu contato. Retornaremos em breve.</p>
+        </section>
 
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const container = document.querySelector('#dados-formulario');
-  let html = '<ul>';
-  for (const [key, value] of params) {
-    html += `<li><strong>${key}:</strong> ${value}</li>`;
-  }
-  html += '</ul>';
-  container.innerHTML = html;
-</script>
+        <section class="resultado-formulario">
+            <h2>Dados Recebidos:</h2>
+            <div id="dados-formulario" class="dados-recebidos">
+                <!-- Os dados do formulário serão inseridos aqui via JavaScript -->
+            </div>
+            <a href="index.html" class="btn-primario" style="margin-top: 1.5rem; display: inline-block;">Voltar para a Página Inicial</a>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Complexo Eólico Cerro Chato. Todos os direitos reservados.</p>
+        <p>Desenvolvido por João Correia | <a href="contato.html">Contato</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" type="module"></script>
+
+    <!-- Script específico para exibir os dados do formulário -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const container = document.querySelector('#dados-formulario');
+        
+        if (params.toString()) {
+            let html = '<ul>';
+            for (const [key, value] of params) {
+                // Capitaliza a primeira letra do nome do campo para ficar mais bonito
+                const label = key.charAt(0).toUpperCase() + key.slice(1);
+                html += `<li><strong>${label}:</strong> ${value}</li>`;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = '<p>Nenhum dado foi recebido.</p>';
+        }
+    </script>
+</body>
+</html>
