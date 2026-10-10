@@ -11,8 +11,6 @@ body {
   background: #FFFFFF;
   line-height: 1.6;
 }
-
-/* Navegação com Flexbox */
 /* Navegação com Flexbox */
 header {
   display: flex;
@@ -21,7 +19,7 @@ header {
   background: #0000FF;
   padding: 1rem;
   color: #FFFFFF;
-  position: relative;
+  position: relative; /* CRUCIAL para o menu funcionar */
   z-index: 1000;
 }
 
@@ -64,12 +62,12 @@ nav a[aria-current="page"] {
   }
   
   nav ul {
-    display: none;
+    display: none; /* Esconde o menu */
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Cola embaixo do cabeçalho */
     left: 0;
-    right: 0;
+    width: 100%;
     background: #0000FF;
     padding: 1rem;
     z-index: 9999;
@@ -77,7 +75,7 @@ nav a[aria-current="page"] {
   }
   
   nav ul.aberto {
-    display: flex !important;
+    display: flex !important; /* Força a abertura */
   }
 }
 
